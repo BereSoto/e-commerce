@@ -29,12 +29,22 @@ module.exports = {
         ],
       },
       {
-        test: /\.(s*)css$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
+          {
+            loader: 'postcss-loader', // Run postcss actions
+            options: {
+              plugins() { // postcss plugins, can be exported to postcss.config.js
+                return [
+                  require('autoprefixer'),
+                ];
+              },
+            },
+          },
           'sass-loader',
         ],
       },
