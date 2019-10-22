@@ -1,0 +1,29 @@
+$primary-color: #77529E;
+$secondary-color: #EFA5AB;
+$accent-color: #97D7D5;
+$ligth-color: #fff;
+$dark-color: #3C3C3B; 
+
+.footer{
+    background-color: $primary-color;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.footer__img {
+    width: 25px;
+}
+
+.footer__social{
+   
+}
+.footer__contact{
+    
+}
+.footer__end{
+    
+}
