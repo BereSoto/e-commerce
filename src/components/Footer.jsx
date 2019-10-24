@@ -6,18 +6,18 @@ import '../assets/styles/components/_Footer.scss';
 
 const Footer = () => (
   <footer className="footer">
-    <div className="row">
+   
         <div className="footer__social">
-        <img className="footer__img" src={heartIcon} alt="logoprueba" />
+          <img className="footer__img" src={heartIcon} alt="logoprueba" />
+          <img className="footer__img" src={heartIcon} alt="logoprueba" />
+        </div>
+        <div className=" footer__rigths">
+          <p>Todos los derechos reservados &copy; 2019</p>
         </div>
         <div className=" footer__contact">
-            <a>Contacto</a>
-            <p>Todos los derechos reservados</p>
+          <a>Contacto</a>
         </div>
-        <div className=" footer__end">
-        <img className="footer__img" src={heartIcon} alt="logoprueba" />
-        </div>
-      </div>
+  
   </footer>
 );
 

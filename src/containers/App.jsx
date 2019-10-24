@@ -6,7 +6,10 @@ import '../assets/styles/main.scss';
 
 const App = () => (
   <div className='App'>
-    {/*<Header />*/}
+    <Header />
+    <div>
+      " "
+    </div>
     <Footer />
   </div>
 );
