@@ -1,0 +1,44 @@
+$primary-color: #77529E;
+$secondary-color: #EFA5AB;
+$accent-color: #97D7D5;
+$ligth-color: #fff;
+$dark-color: #3C3C3B; 
+
+.footer{
+    background-color: $primary-color;
+    width: 100vw;
+    height: 100px;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   
+}
+
+.footer__img {
+    width: 25px;
+    margin: 0 20px;
+}
+
+.footer__social{
+  
+  text-align: center;
+   
+}
+.footer__rigths{
+    width: 50%;
+    text-align: center;
+    color: $ligth-color;
+    p {
+        margin-bottom: 0;
+    }
+   
+}
+.footer__contact{
+    width: 10%;
+    color: $ligth-color;
+    &:hover {
+        color: $accent-color; 
+        }
+}
