@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import logo from '../assets/static/logo.png';
+import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.png';
 import heartIcon from '../assets/static/heart-icon.png';
 import Modal from './Modal';
@@ -51,7 +52,7 @@ class Header extends Component {
           <Modal showModal={isOpen} />
           <div className='header__icons__menu'>
             <img
-              src={carIcon}
+              src={userIcon}
               className='header__icon'
               alt=''
               onClick={this.changeOpen}
