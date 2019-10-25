@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import reducer from './reducers';
 // import App from './containers/App';
 import App from './routes/App';
+import './assets/styles/main.scss';
 
 const initialState = {
   products: [

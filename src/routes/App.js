@@ -1,13 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ProductList from '../containers/ProductList';
+import Home from '../containers/Home';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={ProductList} />
-    </Switch>
-  </BrowserRouter>
+  <div>
+    <Header />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/categorias' component={Home} />
+      </Switch>
+    </BrowserRouter>
+    <Footer />
+  </div>
 );
 
 export default App;
