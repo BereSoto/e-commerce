@@ -2,7 +2,6 @@ import React from 'react';
 //import instagramIcon from '../assets/static/instagram-logo.svg'
 //import FacebookIcon from '../assets/static/facebook-logo.svg'
 import heartIcon from '../assets/static/heart-icon.png';
-import '../assets/styles/components/_Footer.scss';
 
 const Footer = () => (
   <footer className='footer'>

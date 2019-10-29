@@ -1,5 +1,5 @@
 import React from 'react';
-import '../assets/styles/components/Card.scss';
+
 import imgShare from '../assets/static/share.png';
 import imgShoppingCart from '../assets/static/shopping-cart.png';
 import imgWishlist from '../assets/static/wishlist.png';
@@ -17,9 +17,9 @@ const Card = (props) => {
           <p className='product__info--details--name'>{product.name}</p>
           <p className='product__info--details--price'>
 $
-                        {' '}
-                        {product.price}
-                              </p>
+            {' '}
+            {product.price}
+          </p>
           <a src='#'>{product.mark}</a>
         </div>
         <div className='product__info--icons'>
