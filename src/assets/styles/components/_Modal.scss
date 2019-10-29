@@ -1,16 +1,12 @@
-.Modal__container{
+.Modal{
     position: relative;
     top: 10rem;
     background-color: #ffffff;
     padding: 1rem;
     width: 400px;
+    &__header{
+        background-color:$primary-color;
+    }
 }
 
-.Modal__close-button{
-position: absolute;
-top: 0;
-right: 0;
-border: 0;
-background-color: aqua;
-padding: 0.5rem, 1rem;
-}
+
