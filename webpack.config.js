@@ -10,6 +10,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      'react-router-dom': path.resolve('./node_modules/react-router-dom'),
+    },
   },
   module: {
     rules: [
@@ -59,6 +62,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({

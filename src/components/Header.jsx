@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter, Link } from 'react-router-dom';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.png';
@@ -38,7 +38,9 @@ class Header extends Component {
                 <a href='/'>Nosotros</a>
               </li>
               <li>
-                <a href='/'>Categorías</a>
+                <BrowserRouter>
+                  <Link to='/'> Categorías</Link>
+                </BrowserRouter>
               </li>
             </ul>
           </div>
@@ -57,8 +59,10 @@ class Header extends Component {
               alt=''
               onClick={this.changeOpen}
             />
-            <img src={carIcon} className='header__icon' alt='' />
-            <img src={heartIcon} className='header__icon' alt='' />
+            <BrowserRouter>
+              <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
+              <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
+            </BrowserRouter>
           </div>
         </div>
       </header>

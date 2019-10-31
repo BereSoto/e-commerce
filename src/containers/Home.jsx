@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/Hero';
+
 // import { connect } from 'react-redux';
 
 // const ProductList = ({ products }) => {
