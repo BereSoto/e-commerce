@@ -38,9 +38,7 @@ class Header extends Component {
                 <a href='/'>Nosotros</a>
               </li>
               <li>
-                <BrowserRouter>
                   <Link to='/'> Categorías</Link>
-                </BrowserRouter>
               </li>
             </ul>
           </div>
@@ -59,10 +57,8 @@ class Header extends Component {
               alt=''
               onClick={this.changeOpen}
             />
-            <BrowserRouter>
               <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
               <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
-            </BrowserRouter>
           </div>
         </div>
       </header>
