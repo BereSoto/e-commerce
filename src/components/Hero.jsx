@@ -2,22 +2,17 @@ import React from 'react';
 
 const Hero = () => (
   <section className='hero'>
-    <div className='hero__column'>
-      <h1>soy una columna</h1>
+    <div className='hero__column-left'>
+      <h1 className='hero__title'>Se una mas de nuestras emprendedoras.</h1>
       <p>
-lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Magni vitae similique doloribus, modi tempora
-           sequi in dignissimos corporis accusantium quam
-          saepe harum earum nemo iure doloremque tempore accusamus voluptas voluptatum!
+      Creamos un espacio para las mujeres emprendedoras, donde ayudamos a contar su historia y cumplir sus objetivos personales y profesionales a través de sus ideas, productos y sueños.
 
       </p>
     </div>
     <div className='hero__column'>
-      <h1>soy otra columna</h1>
-
+      <h1>aqui va la imagen</h1>
 
     </div>
-
   </section>
 
 );

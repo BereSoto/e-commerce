@@ -1,5 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import CategoriesSection from '../components/CategoriesSection';
+
 // import { connect } from 'react-redux';
 
 // const ProductList = ({ products }) => {
@@ -19,7 +21,14 @@ import Hero from '../components/Hero';
 // export default connect(mapStateToProps, null)(ProductList);
 
 const Home = () => (
-  <Hero />
+  <section>
+    <Hero />
+    <div>
+      <CategoriesSection />
+
+    </div>
+
+  </section>
 
 );
 

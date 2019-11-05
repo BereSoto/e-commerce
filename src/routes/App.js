@@ -5,6 +5,7 @@ import Header from '../components/Header';
 
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import CategoriesSection from '../components/CategoriesSection';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
 
       </Switch>
     </BrowserRouter>
+    <CategoriesSection />
     <Footer />
   </div>
 );
