@@ -29,7 +29,7 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='row'>
-          <div className='col-1 col-sm-4 col-md-3 col-lg-3 header_brand'>
+          <div className='col-1 col-sm-2 col-md-2 col-lg-2 header_brand'>
             <img className='header__img' src={logo} alt='logoprueba' />
           </div>
           <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>

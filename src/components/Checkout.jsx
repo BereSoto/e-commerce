@@ -1,27 +1,69 @@
 import React from 'react';
+import visa from '../assets/static/icons8-visa.svg'
+import mastercard from '../assets/static/icons8-mastercard.svg'
+import amex from '../assets/static/icons8-american-express.svg'
 
 const Checkout = () => (
-  <section className=''>
-    <form className="row">
-      <div className="col-12 col-lg-6 pay-method">
-        <input type="radio" />Credit Card visa
-        <input type="radio" />Credit Card Mastercard
-      </div>
-      <div className="col-12 .col-lg-6">
-        <p>Card number</p>
-        <input type="text"/>
-        <p>Expiration date</p>
-        <select name="month" id="">Month</select>
-        <select name="year" id="">Year</select>
-        <input type="text" /> CVV
-        <input type="Name"/> Full name on a Card
-      </div>
-      <div className="col-12 .col-lg-6">
-        <button>pay</button>
-      </div>
-    </form>
-   
-  </section>
+  <div className="credit__card__form">
+    <div className="credit__card__form__heading">
+        <h2>Confirmar Compra</h2>
+    </div>
+    <div >
+        <form>
+            <div className>
+                <label>Nombre que aparece en la tarjeta
+                <input type="text" className="form__control" id="owner" />
+                </label>
+                
+            </div>
+            <div className="form__group__ccv">
+                <label>CVV
+                <input type="text" className="form-control" id="cvv" />
+                </label>
+                
+            </div>
+            <div className="form-group" id="card-number-field">
+                <label name="cardNumber">Número de tarjeta
+                  <input type="text" className="form-control" id="cardNumber" />
+                </label>
+                
+            </div>
+            <div className="form-group" id="expiration-date">
+                <label>Fecha de expiración</label>
+                <select>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero </option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Augosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+                <select>
+                    <option value="16"> 2019</option>
+                    <option value="17"> 2020</option>
+                    <option value="18"> 2021</option>
+                    <option value="19"> 2022</option>
+                    <option value="20"> 2023</option>
+                    <option value="21"> 2024</option>
+                </select>
+            </div>
+            <div className="form-group" id="credit_cards">
+                <img className="card_type" src={visa} id="visa"/>
+                <img className="card_type" src={mastercard} id="mastercard"/>
+                <img className="card_type" src={amex} id="amex"/>
+            </div>
+            <div className="form-group" id="pay-now">
+                <button type="submit" className="form__btn" id="confirm-purchase">Confirm</button>
+            </div>
+        </form>
+    </div>
+</div>
 );
 
 export default Checkout;
