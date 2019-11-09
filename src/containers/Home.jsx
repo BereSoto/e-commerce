@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import CategoriesSection from '../components/CategoriesSection';
 import FavoriteSection from '../components/FavoriteSection';
 
-
 // import { connect } from 'react-redux';
 
 // const ProductList = ({ products }) => {
