@@ -1,20 +1,13 @@
-$primary-color: #77529E;
-$secondary-color: #EFA5AB;
-$accent-color: #97D7D5;
-$ligth-color: #fff;
-$dark-color: #3C3C3B; 
 
 .footer{
     background-color: $primary-color;
     width: 100vw;
     height: 100px;
-    padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
-   justify-content: space-around;
-   align-items: center;
-  
-   
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
 }
 
 .footer__img {
@@ -39,6 +32,7 @@ $dark-color: #3C3C3B;
 .footer__contact{
     width: 10%;
     color: $ligth-color;
+    text-align: center;
     &:hover {
         color: $accent-color; 
         }

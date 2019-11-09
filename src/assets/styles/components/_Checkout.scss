@@ -1,0 +1,65 @@
+.credit__card__form {
+    overflow: hidden;
+    color: #3C3C3B;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.credit__card__form__heading h2 {
+    text-align: center;
+    font-family: 'Monserrat', sans-serif;
+    color: #4c4e56;
+}
+form {
+    flex-direction: column;
+    display: flex;
+    width: 25%;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.form__control {
+    line-height: 40px;
+    height: auto;
+    padding: 0 16px;
+    width: 250px;
+}
+
+.card_type{
+    width: 50px;
+}
+
+.form__btn {
+	font-family: "Open Sans";
+    font-weight: 400;
+    padding: 6px;
+    background-color: #77529E;
+    color: white;
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 25px;
+    transition: all .2s linear;
+    
+	
+	@media screen and (max-width: $break) {
+		margin: 0 auto;
+		margin-top: 60px;
+		margin-bottom: 50px;
+    	width: 200px;
+  	}
+	
+	&:hover {
+		background-color: $accent-color;
+		transition: all .2s linear;
+    }
+    small {
+        font-size: 7px;
+        text-align: center;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter, Link } from 'react-router-dom';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.png';
@@ -29,7 +29,7 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='row'>
-          <div className='col-1 col-sm-4 col-md-3 col-lg-3 header_brand'>
+          <div className='col-1 col-sm-2 col-md-2 col-lg-2 header_brand'>
             <img className='header__img' src={logo} alt='logoprueba' />
           </div>
           <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>
@@ -38,7 +38,7 @@ class Header extends Component {
                 <a href='/'>Nosotros</a>
               </li>
               <li>
-                <a href='/'>Categorías</a>
+                  <Link to='/'> Categorías</Link>
               </li>
             </ul>
           </div>
@@ -57,8 +57,8 @@ class Header extends Component {
               alt=''
               onClick={this.changeOpen}
             />
-            <img src={carIcon} className='header__icon' alt='' />
-            <img src={heartIcon} className='header__icon' alt='' />
+              <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
+              <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
           </div>
         </div>
       </header>
