@@ -62,7 +62,7 @@ Número de tarjeta
           <img className='card_type' src={amex} id='amex' />
         </div>
         <div className='form-group' id='pay-now'>
-          <button type='submit' className='form__btn' id='confirm-purchase'>Confirm</button>
+          <button type='submit' className='form__btn' id='confirm-purchase'>Confirmar</button>
         </div>
       </form>
     </div>
