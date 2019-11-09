@@ -17,38 +17,38 @@
     }
 }
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
-figure.snip0015 {
+//animacion index
+
+figure.image {
   font-family: 'Raleway', Arial, sans-serif;
   color: #fff;
   position: relative;
   overflow: hidden;
-  margin: 10px;
   min-width: 220px;
   max-width: 310px;
   max-height: 220px;
   width: 100%;
   text-align: center;
 }
-figure.snip0015 * {
+figure.image * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-figure.snip0015 img {
+figure.image img {
   opacity: 1;
   width: 100%;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
-figure.snip0015 figcaption {
+figure.image figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 3em 3em;
+  padding: 2em 2em;
   width: 100%;
   height: 100%;
 }
-figure.snip0015 figcaption::before {
+figure.image figcaption::before {
   position: absolute;
   top: 50%;
   right: 30px;
@@ -64,15 +64,18 @@ figure.snip0015 figcaption::before {
   -webkit-transition-delay: 0.6s;
   transition-delay: 0.6s;
 }
-figure.snip0015 h2,
-figure.snip0015 p {
+figure.image h2{
   margin: 0 0 5px;
   opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+  -webkit-transition: opacity 0.35s;
+   -webkit-transform: 0.35s;
+  transition: opacity 0.35s;
+  -webkit-transform :0.35s;
+  -moz-transform: 0.35s;
+  -o-transform: 0.35s;
+  transform: 0.35s;
 }
-figure.snip0015 h2 {
-  word-spacing: -0.15em;
+figure.image h2 {
   font-weight: 300;
   text-transform: uppercase;
   -webkit-transform: translate3d(0%, 50%, 0);
@@ -80,15 +83,10 @@ figure.snip0015 h2 {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-figure.snip0015 h2 span {
+figure.image h2 span {
   font-weight: 800;
 }
-figure.snip0015 p {
-  font-weight: 200	;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-figure.snip0015 a {
+figure.image a {
   left: 0;
   right: 0;
   top: 0;
@@ -96,22 +94,18 @@ figure.snip0015 a {
   position: absolute;
   color: #ffffff;
 }
-figure.snip0015:hover img {
+figure.image:hover img {
   opacity: 0.35;
 }
-figure.snip0015:hover figcaption h2 {
+figure.image:hover figcaption h2 {
   opacity: 1;
   -webkit-transform: translate3d(0%, 0%, 0);
   transform: translate3d(0%, 0%, 0);
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-figure.snip0015:hover figcaption p {
-  opacity: 0.9;
-  -webkit-transition-delay: 0.6s;
-  transition-delay: 0.6s;
-}
-figure.snip0015:hover figcaption::before {
+
+figure.image:hover figcaption::before {
   background: rgba(255, 255, 255, 0);
   top: 30px;
   bottom: 30px;
