@@ -1,4 +1,5 @@
 import React from 'react';
+import hero from '../assets/static/hero.png';
 
 const Hero = () => (
   <section className='hero'>
@@ -10,8 +11,8 @@ const Hero = () => (
 
       </p>
     </div>
-    <div className='hero__column'>
-      <h1>aqui va la imagen</h1>
+    <div className='hero__column-rigth'>
+      <img src={hero} className='' alt='' />
 
     </div>
   </section>

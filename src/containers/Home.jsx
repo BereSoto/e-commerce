@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import CategoriesSection from '../components/CategoriesSection';
+import FavoriteSection from '../components/FavoriteSection';
 
 // import { connect } from 'react-redux';
 
@@ -27,7 +28,7 @@ const Home = () => (
       <CategoriesSection />
     </div>
     <div>
-      <CategoriesSection />
+      <FavoriteSection />
     </div>
 
   </section>
