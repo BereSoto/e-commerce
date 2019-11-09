@@ -15,12 +15,11 @@ const App = () => (
         <Hero>
           <Route exact path='/' component={Home} />
           <Route exact path='/categorias' component={Home} />
-
         </Hero>
-
       </Switch>
     </BrowserRouter>
     <CategoriesSection />
+
     <Footer />
   </div>
 );

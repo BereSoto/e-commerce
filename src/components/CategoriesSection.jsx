@@ -3,8 +3,12 @@ import curva from '../assets/static/ondita.svg';
 
 const CategoriesSection = () => (
   <section className='categories-home'>
+    <div className=''>
+      <img src={curva} className='curva' alt='' />
+    </div>
+
     <div className='categories-home__content'>
-      <h2>Te recomendamos</h2>
+      <h2>Categorias</h2>
       <div className='categories-home__cards'>
         <div className='categories-home__card'>
           <figure className='image'>
@@ -13,7 +17,6 @@ const CategoriesSection = () => (
               <h2>
                ropa
               </h2>
-
               <a href='#' />
             </figcaption>
           </figure>

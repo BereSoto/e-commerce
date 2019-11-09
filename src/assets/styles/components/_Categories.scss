@@ -1,26 +1,30 @@
+.curva{
+  position: absolute;
+  left: 0;
+}
+
 .categories-home{
+  position: relative;
+    margin-bottom: 500px;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     &__content{
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        
-    }
+     }
     &__cards{
         display: flex;
         justify-content: space-between;
+        margin-top: 150px;
     }
-    &__card{
-        border: 1px solid $primary-color;
-        
-    }
+   
 }
+
 
 //animacion index
 
 figure.image {
-  font-family: 'Raleway', Arial, sans-serif;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -76,6 +80,7 @@ figure.image h2{
   transform: 0.35s;
 }
 figure.image h2 {
+  font-size: 2rem;
   font-weight: 300;
   text-transform: uppercase;
   -webkit-transform: translate3d(0%, 50%, 0);
@@ -83,20 +88,22 @@ figure.image h2 {
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-figure.image h2 span {
-  font-weight: 800;
-}
-figure.image a {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  color: #ffffff;
-}
+
+// figure.image a {
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   position: absolute;
+//   color: red;
+// }
+
+// opacidad 
 figure.image:hover img {
   opacity: 0.35;
 }
+
+// texto
 figure.image:hover figcaption h2 {
   opacity: 1;
   -webkit-transform: translate3d(0%, 0%, 0);
@@ -105,6 +112,7 @@ figure.image:hover figcaption h2 {
   transition-delay: 0.3s;
 }
 
+// lineas que se abren
 figure.image:hover figcaption::before {
   background: rgba(255, 255, 255, 0);
   top: 30px;
