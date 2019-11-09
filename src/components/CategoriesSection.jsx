@@ -34,17 +34,19 @@ const CategoriesSection = () => (
         </div>
         <div className='categories-home__card'>
           <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
+            <img src='https://solora.s3.us-east-2.amazonaws.com/prueba.jpg' alt='' />
             <figcaption>
               <h2>
                 Artesanias
               </h2>
-
               <a href='#' />
             </figcaption>
           </figure>
         </div>
       </div>
+    </div>
+    <div className='categories-home__btn'>
+      <a href='' className='categories-home__text'>Descubre más</a>
 
     </div>
 
