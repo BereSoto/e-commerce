@@ -11,7 +11,7 @@ import NotFound from '../containers/NotFound';
 const App = () => (
   <>
     <BrowserRouter>
-    <Header />
+      <Header />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/categorias' component={Home} />
@@ -20,8 +20,8 @@ const App = () => (
         <Route exact path='/checkout' component={Checkout} />
         <Route component={NotFound} />
       </Switch>
-    <Footer />
     </BrowserRouter>
+    <Footer />
   </>
 );
 

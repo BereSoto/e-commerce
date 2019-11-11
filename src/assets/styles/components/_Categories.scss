@@ -1,0 +1,39 @@
+.curva{
+  position: absolute;
+  left: 0;
+}
+
+.categories-home{
+  position: relative;
+  text-align: center;
+  font-size: 4rem;
+  
+    &__content{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+     }
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 150px;
+    }
+    &__btn{
+      position: relative;
+      width: 20%;
+      background-color: $accent-color;
+      font-size: 1.5rem;
+      border-radius: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+    }
+    &__text{
+      color: $dark-color;
+      text-decoration: none;
+      
+      }
+   
+  }
+
+

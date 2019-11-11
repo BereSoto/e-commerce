@@ -1,23 +1,20 @@
 import React from 'react';
+import hero from '../assets/static/hero.png';
 
 const Hero = () => (
   <section className='hero'>
-    <div className='hero__column'>
-      <h1>soy una columna</h1>
+    <div className='hero__column-left'>
+      <h1 className='hero__title'>En xxxxx creamos un espacio para impulsar tus sueños.</h1>
+      <p>Se una mas de nuestras emprendedoras.</p>
       <p>
-lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Magni vitae similique doloribus, modi tempora
-           sequi in dignissimos corporis accusantium quam
-          saepe harum earum nemo iure doloremque tempore accusamus voluptas voluptatum!
+      Creamos un espacio para todas las mujeres que quieran contar su historia y cumplir sus sueños
 
       </p>
     </div>
-    <div className='hero__column'>
-      <h1>soy otra columna</h1>
-
+    <div className='hero__column-rigth'>
+      <img src={hero} className='' alt='' />
 
     </div>
-
   </section>
 
 );

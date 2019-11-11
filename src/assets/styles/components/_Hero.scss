@@ -1,8 +1,18 @@
 .hero{
     display: flex;
     width: 100%;
+    &__column-left{
+        width: 50%;
+        text-align: center;
+        padding:20px ;
+    }
     &__column{
         width: 50%;
-        background-color: crimson;
+        
+    }
+    &__title{
+        font-size: 2rem;
+        font-weight: bold;
+        padding: 2rem;  
     }
 }
