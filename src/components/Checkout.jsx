@@ -14,15 +14,16 @@ class Checkout extends React.Component {
   }
     handleInputChange(event) {
       const target = event.target;
-      const value = target.type === 'input' ? target.checked : target.value;
+      const value = target.type === 'input' ? target.name : target.value;
       const name = target.name;
       console.log(`${name} ${value}`);
-     
+      
       this.setState({
         [name]: value
       });
     }
     render(){
+    
       return (
         <div className='credit__card__form'>
           <div className='credit__card__form__heading'>
@@ -61,28 +62,36 @@ class Checkout extends React.Component {
               </div>
               <div className='form-group' id='expiration-date'>
                 <label>Fecha de expiración</label>
-                <select>
-                  <option value='01'>Enero</option>
-                  <option value='02'>Febrero </option>
-                  <option value='03'>Marzo</option>
-                  <option value='04'>Abril</option>
-                  <option value='05'>Mayo</option>
-                  <option value='06'>Junio</option>
-                  <option value='07'>Julio</option>
-                  <option value='08'>Augosto</option>
-                  <option value='09'>Septiembre</option>
-                  <option value='10'>Octubre</option>
-                  <option value='11'>Noviembre</option>
-                  <option value='12'>Diciembre</option>
-                </select>
-                <select>
-                  <option value='16'> 2019</option>
-                  <option value='17'> 2020</option>
-                  <option value='18'> 2021</option>
-                  <option value='19'> 2022</option>
-                  <option value='20'> 2023</option>
-                  <option value='21'> 2024</option>
-                </select>
+                <div className="control">
+                  <div className ="select">
+                    <select name="month" onChange={this.handleInputChange}>
+                      <option value='01'>Enero</option>
+                      <option value='02'>Febrero </option>
+                      <option value='03'>Marzo</option>
+                      <option value='04'>Abril</option>
+                      <option value='05'>Mayo</option>
+                      <option value='06'>Junio</option>
+                      <option value='07'>Julio</option>
+                      <option value='08'>Augosto</option>
+                      <option value='09'>Septiembre</option>
+                      <option value='10'>Octubre</option>
+                      <option value='11'>Noviembre</option>
+                      <option value='12'>Diciembre</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="control">
+                  <div className ="select">
+                    <select name="year" onChange={this.handleInputChange}>
+                      <option value='19'> 2019</option>
+                      <option value='20'> 2020</option>
+                      <option value='21'> 2021</option>
+                      <option value='22'> 2022</option>
+                      <option value='23'> 2023</option>
+                      <option value='24'> 2024</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div className='form-group' id='credit_cards'>
                 <img className='card_type' src={visa} id='visa' />
