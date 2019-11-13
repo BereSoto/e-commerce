@@ -3,9 +3,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import Cart from '../components/Cart';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Wishes from '../components/Wishes';
+//import Products from '../components/Products';
 import Checkout from '../components/Checkout';
+import Footer from '../components/Footer';
 import NotFound from '../containers/NotFound';
 
 const App = () => (
