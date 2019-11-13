@@ -34,7 +34,7 @@ margin-bottom:2rem;
 &__form{
     width: 100%;
     padding-top: 2rem;
-    input[type='text'], [type='email']{
+    input[type='text'], [type='email'], [type='date']{
         background: none;
         border: none;
         border-bottom: solid 2px #EFA5AB;
@@ -57,10 +57,13 @@ margin-bottom:2rem;
         -o-transition: all 0.3s;
         transition: all 0.3s;
     }
-    input[type='text']:focus, [type='email']:focus,{
+    input[type='text']:focus, [type='email']:focus, [type='date']:focus{
         outline: none;
         padding: 0 0 0.875em 0;
     }
+  }
+  &__btn{
+      width: 50%;
   }
 }
 

@@ -17,9 +17,17 @@ const UserProfile = () => (
             <label>
               <input type='email' name='name' placeholder='Apellido' />
             </label>
-            <input type='submit' value='Submit' />
+            <label>
+              <input
+                type='date'
+                name='fecha'
+                min='1970-01-01'
+                max='2018-12-31'
+                step='1'
+              />
+            </label>
+            <input type='submit' value='Submit' className='user-columns__btn' />
           </form>
-
         </div>
 
       </div>
