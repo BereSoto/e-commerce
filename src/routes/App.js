@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Wishes from '../components/Wishes';
 import Checkout from '../components/Checkout';
 import NotFound from '../containers/NotFound';
+import UserProfile from '../components/UserProfile';
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path='/cart' component={Cart} />
         <Route exact path='/wishes' component={Wishes} />
         <Route exact path='/checkout' component={Checkout} />
+        <Route exact path='/userprofile' component={UserProfile} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
