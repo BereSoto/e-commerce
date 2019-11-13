@@ -26,10 +26,9 @@ const UserProfile = () => (
                 step='1'
               />
             </label>
-            <input type='submit' value='Submit' className='user-columns__btn' />
+            <input type='submit' value='Actualizar información' className='form__btn' />
           </form>
         </div>
-
       </div>
     </div>
 

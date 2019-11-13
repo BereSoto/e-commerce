@@ -2,7 +2,6 @@
 display: flex;
 width: 100%;
 height: auto;
-background-color: blueviolet;
 &__left{
     width: 50%;
     text-align: center;
@@ -27,7 +26,7 @@ background-color: blueviolet;
 &__data{
 background-color: #E9E9E9;
 width: 80%;
-height: 300px;
+height:auto;
 margin-top: 3rem;
 margin-bottom:2rem;
 }
