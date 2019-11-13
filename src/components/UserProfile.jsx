@@ -10,14 +10,12 @@ const UserProfile = () => (
       </div>
       <div className='user-columns__rigth'>
         <div className='user-columns__data'>
-          <form>
+          <form className='user-columns__form'>
             <label>
-               Name:
-              <input type='text' name='name' />
+              <input type='text' name='name' placeholder='Nombre' />
             </label>
             <label>
-               Name:
-              <input type='text' name='name' />
+              <input type='email' name='name' placeholder='Apellido' />
             </label>
             <input type='submit' value='Submit' />
           </form>
