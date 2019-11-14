@@ -15,7 +15,7 @@ html, body {
 	font-family: 'Open Sans';
 }
 
-*, *:before, *:after {
+.face *, .face *:before, .face *:after {
 	box-sizing: content-box;
 	transform: translate3d(0, 0, 0);
 }
