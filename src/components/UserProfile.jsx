@@ -31,6 +31,9 @@ const UserProfile = () => (
         </div>
       </div>
     </div>
+    <div className='user-address'>
+      <h2>Direcciones</h2>
+    </div>
 
   </section>
 

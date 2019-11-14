@@ -12,7 +12,7 @@ const CategoriesSection = () => (
       <div className='categories-home__cards'>
         <div className='categories-home__card'>
           <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='demo' />
+            <img src='https://e-moms.s3.us-east-2.amazonaws.com/maizajo/naranja.jpg' alt='demo' />
             <figcaption>
               <h2>
                ropa

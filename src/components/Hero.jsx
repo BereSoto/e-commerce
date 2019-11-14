@@ -8,12 +8,10 @@ const Hero = () => (
       <p>Se una mas de nuestras emprendedoras.</p>
       <p>
       Creamos un espacio para todas las mujeres que quieran contar su historia y cumplir sus sueños.
-
       </p>
     </div>
     <div className='hero__column-rigth'>
-      <img src={hero} className='' alt='' />
-
+      <img src={hero} className='heroimagen' alt='' />
     </div>
   </section>
 
