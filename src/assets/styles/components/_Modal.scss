@@ -1,65 +1,64 @@
 .modal{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:black;
-  opacity: 0.6;
-  position: fixed;
-  z-index: 3;
-  padding: 1rem;
-  width: 70%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:black;
+    position: fixed;
+    z-index: 3;
+    padding: 1rem;
+    width: 70%;
+    left: 50%;
+    top: 300px; 
+    transform: translate(-50%, -50%);
+    
+    &__container{
+      position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color:#ffffff;
+        width: 50%;
+       }
+  &__header{
+    background-color:#77529E;
+    color: $ligth-color;
+    height: 3rem;
+    align-items: center;
+  }
+  &__form{
+  margin: 0 auto;
+  padding: 2em 1.5em;
   
-  
-  &__container{
-      display: flex;
-      flex-direction: column;
-      background-color:#ffffff;
-      width: 50%;
-     
-     }
-&__header{
-  background-color:#77529E;
-  color: $ligth-color;
-  height: 3rem;
-  align-items: center;
-}
-&__form{
-margin: 0 auto;
-padding: 2em 1.5em;
-
-}
-&__data{
-text-align: center;
-display: block;
-padding-bottom: 1em;
-font-weight: bold;
-}
-input {
-  width: 80%;
-  border-radius: 5px;
-  border: 1px solid  #e9e9e9;
-  padding: .8em 1em;
-  box-sizing: border-box;
-  background-color: #e9e9e9;
-  margin-bottom: 1em;
-  outline: 0;
-  margin-left: 40px;
-  
-}
-&__btn{
-  background-color: $accent-color;
-  width: 30%;
+  }
+  &__data{
   text-align: center;
-  color:$dark-color;
-  margin-left: 140px;
-  border-radius: 15px;
-
-  &--social{
-    background-color: red;
+  display: block;
+  padding-bottom: 1em;
+  font-weight: bold;
+  }
+  input {
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid  #e9e9e9;
+    padding: .8em 1em;
+    box-sizing: border-box;
+    background-color: #e9e9e9;
+    margin-bottom: 1em;
+    outline: 0;
+    margin-left: 40px;
+    
+  }
+  &__btn{
+    background-color: $accent-color;
+    width: 30%;
+    text-align: center;
+    color:$dark-color;
+    margin-left: 140px;
+    border-radius: 15px;
+  
+    &--social{
+      background-color: red;
+    }
   }
 }
-}
+
 
