@@ -1,3 +1,9 @@
+---
+ src/assets/styles/components/_Modal.scss    | 55 ++++++++++++---------
+ src/assets/styles/components/_NotFound.scss |  5 --
+ src/components/Modal.jsx                    |  1 +
+ 3 files changed, 34 insertions(+), 27 deletions(-)
+
 diff --git a/src/assets/styles/components/_Modal.scss b/src/assets/styles/components/_Modal.scss
 index 440954c3..58470487 100644
 --- a/src/assets/styles/components/_Modal.scss
@@ -92,17 +98,17 @@ index 43a7ecdb..746bf40b 100644
 --- a/src/assets/styles/components/_NotFound.scss
 +++ b/src/assets/styles/components/_NotFound.scss
 @@ -15,11 +15,6 @@ html, body {
-   font-family: 'Open Sans';
+ 	font-family: 'Open Sans';
  }
  
 -*, *:before, *:after {
--  box-sizing: content-box;
--  transform: translate3d(0, 0, 0);
+-	box-sizing: content-box;
+-	transform: translate3d(0, 0, 0);
 -}
 -
  .face {
-   width: 300px;
-   height: 300px;
+ 	width: 300px;
+ 	height: 300px;
 diff --git a/src/components/Modal.jsx b/src/components/Modal.jsx
 index f6a1f593..459aaed7 100644
 --- a/src/components/Modal.jsx
@@ -115,3 +121,6 @@ index f6a1f593..459aaed7 100644
        <div className='modal__container'>
          <div className='modal__header'>
            <p>INICIA SESIÓN</p>
+-- 
+2.23.0.windows.1
+
