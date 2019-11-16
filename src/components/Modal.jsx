@@ -6,8 +6,9 @@ const Modal = ({ showModal }) => {
     <div className='modal'>
       <div className='modal__container'>
         <div className='modal__header'>
+
           <p>INICIA SESIÓN</p>
-          {/* <p>CLOSE</p> */}
+
         </div>
         <div className=''>
           <form className='modal__form'>
