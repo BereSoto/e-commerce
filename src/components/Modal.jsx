@@ -1,5 +1,4 @@
 import React from 'react';
-import FacebookIcon from '../assets/static/facebook-logo.svg';
 
 const Modal = ({ showModal, closeCb = () => {} }) => {
   const MODAL = showModal ? (
