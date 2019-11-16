@@ -1,4 +1,5 @@
 import React from 'react';
+import FacebookIcon from '../assets/static/facebook-logo.svg';
 
 const Modal = ({ showModal, closeCb = () => {} }) => {
   const MODAL = showModal ? (
@@ -22,9 +23,7 @@ const Modal = ({ showModal, closeCb = () => {} }) => {
 
           <a href='/register'>Crea una cuenta</a>
         </form>
-
       </div>
-
     </div>
 
   ) :

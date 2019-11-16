@@ -13,6 +13,7 @@ class Header extends Component {
       isOpen: false,
     };
     this.changeOpen = this.changeOpen.bind(this);
+
   };
 
   changeOpen() {
@@ -27,6 +28,7 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='row'>
+
           <div className='col-1 col-sm-2 col-md-2 col-lg-2 header_brand'>
             <img className='header__img' src={logo} alt='logoprueba' />
           </div>
@@ -40,6 +42,7 @@ class Header extends Component {
               </li>
             </ul>
           </div>
+
           <div className=' header__search col- col-sm-4 col-md-3 col-lg-3'>
             <input
               type='text'
@@ -49,6 +52,7 @@ class Header extends Component {
           </div>
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
           <div className='header__icons__menu'>
+
             <button type='button' onClick={this.changeOpen}>
               <img
                 src={userIcon}
@@ -56,6 +60,7 @@ class Header extends Component {
                 alt='User Icon'
               />
             </button>
+
             <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
             <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
           </div>
