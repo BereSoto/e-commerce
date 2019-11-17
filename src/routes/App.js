@@ -10,9 +10,9 @@ import Footer from '../components/Footer';
 import NotFound from '../containers/NotFound';
 import UserProfile from '../components/UserProfile';
 import Stores from '../components/Stores';
+import Card from '../components/Card';
 
 const App = () => (
-  <>
     <BrowserRouter>
       <Header />
       <Switch>
@@ -23,11 +23,11 @@ const App = () => (
         <Route exact path='/checkout' component={Checkout} />
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/stores' component={Stores} />
+        <Route exact path='/card' component={Card} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </BrowserRouter>
-    <Footer />
-  </>
 );
 
 export default App;
