@@ -1,7 +1,8 @@
 @import "./bootstrap";
+@import "./shared/button";
+
 @import "./components/Header";
 @import "./components/Card";
-@import "./components/Modal";
 @import "./components/Login";
 @import "./components/Products";
 @import "./components/Hero";
@@ -12,9 +13,11 @@
 @import "./components/WishList";
 @import "./components/NotFound";
 @import "./components/UserProfile";
+@import "./components/PurchaseMade";
 @import "./components/Checkout";
 @import "./components/Stores";
 @import "./components/Animation";
+@import "./components/Modal";
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 body *{

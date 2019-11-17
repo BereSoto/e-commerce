@@ -11,6 +11,8 @@ import NotFound from '../containers/NotFound';
 import UserProfile from '../components/UserProfile';
 import Stores from '../components/Stores';
 import Card from '../components/Card';
+import PurchaseMade from '../components/PurchaseMade';
+
 
 const App = () => (
     <BrowserRouter>
@@ -24,6 +26,7 @@ const App = () => (
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/stores' component={Stores} />
         <Route exact path='/card' component={Card} />
+        <Route exact path='/purchasemade' component={PurchaseMade} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
