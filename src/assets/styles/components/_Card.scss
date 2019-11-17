@@ -3,8 +3,10 @@
   height: 300px;
 }
 .product__image img {
-  width: 100%;
   object-fit: contain;
+  height: 300px;
+  width: 400px;
+
 }
 .product__info {
   width: inherit;
