@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.png';
@@ -13,14 +13,13 @@ class Header extends Component {
       isOpen: false,
     };
     this.changeOpen = this.changeOpen.bind(this);
+
   };
 
   changeOpen() {
-    const { isOpen } = this.state;
-    console.log(isOpen);
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
+    this.setState((prevState) => ({
+      isOpen: !prevState.isOpen,
+    }));
   }
 
   render() {
@@ -29,6 +28,7 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='row'>
+
           <div className='col-1 col-sm-2 col-md-2 col-lg-2 header_brand'>
             <img className='header__img' src={logo} alt='logoprueba' />
           </div>
@@ -38,10 +38,11 @@ class Header extends Component {
                 <a href='/'>Nosotros</a>
               </li>
               <li>
-                  <Link to='/'> Categorías</Link>
+                <Link to='/'> Categorías</Link>
               </li>
             </ul>
           </div>
+
           <div className=' header__search col- col-sm-4 col-md-3 col-lg-3'>
             <input
               type='text'
@@ -49,16 +50,19 @@ class Header extends Component {
               placeholder=' Buscar...'
             />
           </div>
-          <Modal showModal={isOpen} />
+          <Modal showModal={isOpen} closeCb={this.changeOpen} />
           <div className='header__icons__menu'>
-            <img
-              src={userIcon}
-              className='header__icon'
-              alt=''
-              onClick={this.changeOpen}
-            />
-              <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
-              <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
+
+            <button type='button' onClick={this.changeOpen}>
+              <img
+                src={userIcon}
+                className='header__icon'
+                alt='User Icon'
+              />
+            </button>
+
+            <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
+            <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
           </div>
         </div>
       </header>

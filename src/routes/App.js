@@ -15,6 +15,8 @@ import Clothes from '../components/Clothes';
 import Babys from '../components/Babys';
 import Handcrafts from '../components/Handcrafts';
 import Food from '../components/Food';
+import PurchaseMade from '../components/PurchaseMade';
+
 
 const App = () => (
     <BrowserRouter>
@@ -32,6 +34,7 @@ const App = () => (
         <Route exact path='/babys' component={Babys} />
         <Route exact path='/handcrafts' component={Handcrafts} />
         <Route exact path='/food' component={Food} />
+        <Route exact path='/purchasemade' component={PurchaseMade} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
