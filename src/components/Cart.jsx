@@ -7,7 +7,6 @@ import less from '../assets/static/less.svg';
 const Cart = (props) => {
   const { cart } = props;
   
-  
 
   return(
     <div>
