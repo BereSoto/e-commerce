@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions";
-import { addToCart } from "../actions";
+
 
 import imgShare from "../assets/static/share.png";
 import imgShoppingCart from "../assets/static/shopping-cart.png";
 import imgWishlist from "../assets/static/wishlist.png";
 
-class Card extends React.Component {
+class Babys extends React.Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
@@ -16,6 +16,10 @@ class Card extends React.Component {
   
   renderProductsList() {
     return this.props.products.map(product => {
+       
+
+        if(product.categories[0]=== "bebe"){
+            
       return (
         <div className="product">
           <div className="product__image">
@@ -39,11 +43,11 @@ class Card extends React.Component {
           </div>
         </div>
       );
+      }
     });
   }
 
   render() {
-    console.log(this.props.products);
     return (
       <div className="Products">
         <div className="Products-items">{this.renderProductsList()}</div>
@@ -58,4 +62,4 @@ const mapStateToProps = reducers => {
 
 
 
-export default connect(mapStateToProps,  { fetchProducts })(Card);
+export default connect(mapStateToProps,  { fetchProducts })(Babys);

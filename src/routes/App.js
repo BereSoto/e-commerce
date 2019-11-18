@@ -11,6 +11,10 @@ import NotFound from '../containers/NotFound';
 import UserProfile from '../components/UserProfile';
 import Stores from '../components/Stores';
 import Card from '../components/Card';
+import Clothes from '../components/Clothes';
+import Babys from '../components/Babys';
+import Handcrafts from '../components/Handcrafts';
+import Food from '../components/Food';
 import PurchaseMade from '../components/PurchaseMade';
 
 
@@ -26,6 +30,10 @@ const App = () => (
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/stores' component={Stores} />
         <Route exact path='/card' component={Card} />
+        <Route exact path='/clothes' component={Clothes} />
+        <Route exact path='/babys' component={Babys} />
+        <Route exact path='/handcrafts' component={Handcrafts} />
+        <Route exact path='/food' component={Food} />
         <Route exact path='/purchasemade' component={PurchaseMade} />
         <Route component={NotFound} />
       </Switch>
