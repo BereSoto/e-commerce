@@ -13,8 +13,7 @@ class Header extends Component {
       isOpen: false,
     };
     this.changeOpen = this.changeOpen.bind(this);
-
-  };
+  }
 
   changeOpen() {
     this.setState((prevState) => ({
@@ -28,10 +27,12 @@ class Header extends Component {
     return (
       <header className='header'>
         <div className='row'>
-
-          <div className='col-1 col-sm-2 col-md-2 col-lg-2 header_brand'>
-            <img className='header__img' src={logo} alt='logoprueba' />
-          </div>
+          <Link to='/'>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 header_brand'>
+              <img className='header__img' src={logo} alt='logoprueba' />
+            </div>
+          </Link>
+          {/*
           <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>
             <ul>
               <li>
@@ -42,7 +43,8 @@ class Header extends Component {
               </li>
             </ul>
           </div>
-
+          */}
+          {/*
           <div className=' header__search col- col-sm-4 col-md-3 col-lg-3'>
             <input
               type='text'
@@ -50,24 +52,24 @@ class Header extends Component {
               placeholder=' Buscar...'
             />
           </div>
+          */}
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
-          <div className='header__icons__menu'>
 
+          <div className='col-2 offset-7 col-sm-2 offset-sm-7 col-md-2 offset-md-7 col-lg-2 offset-md-7 header__icons__menu'>
             <button type='button' onClick={this.changeOpen}>
-              <img
-                src={userIcon}
-                className='header__icon'
-                alt='User Icon'
-              />
+              <img src={userIcon} className='header__icon' alt='User Icon' />
             </button>
-
-            <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
-            <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
+            <Link to='/cart'>
+              <img src={carIcon} className='header__icon' alt='' />
+            </Link>
+            <Link to='wishes'>
+              <img src={heartIcon} className='header__icon' alt='' />
+            </Link>
           </div>
         </div>
       </header>
     );
-  };
+  }
 }
 
 export default Header;
