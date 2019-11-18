@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
-import carIcon from '../assets/static/car-icon.png';
-import heartIcon from '../assets/static/heart-icon.png';
+import carIcon from '../assets/static/car-icon.svg';
+import heartIcon from '../assets/static/heart-icon.svg';
 import Modal from './Modal';
 
 class Header extends Component {

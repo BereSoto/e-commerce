@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts, addToCart } from '../actions';
-
-import imgShare from '../assets/static/share.png';
-import imgShoppingCart from '../assets/static/shopping-cart.png';
-import imgWishlist from '../assets/static/wishlist.png';
+import carIcon from '../assets/static/car-icon-card.svg';
+import heartIcon from '../assets/static/heart-icon-card.svg';
 
 class Card extends React.Component {
   componentDidMount() {
@@ -18,24 +16,26 @@ class Card extends React.Component {
           <div className='card-item__image'>
             <img alt='Producto' src={product.image} />
           </div>
-          <div className='product__info'>
-            <div className='product__info--details'>
-              {product.description}
-              <p className='product__info--details--name'>{product.title}</p>
-              <p className='product__info--details--price'>
+          <div className='card-item__info'>
+            <div className='card-item__product'>
+              <h5 className='card-item__descripcion'>{product.description}</h5>
+
+              <p className='card-item__name'>{product.title}</p>
+              <p className='card-item__price'>
+              $
                 {product.price}
-$
+
               </p>
               <a src='#' />
             </div>
-            <div className='product__info--icons'>
+            <div className='card-item__icons'>
               <img
-                src={imgShoppingCart}
+                src={carIcon}
                 alt='Agregar al carrito'
-
+                className='icon-left'
               />
               {/* <img src={imgShare} alt="Compartir"/> */}
-              <img src={imgWishlist} alt='Favoritos' />
+              <img src={heartIcon} alt='Favoritos' />
             </div>
           </div>
         </div>

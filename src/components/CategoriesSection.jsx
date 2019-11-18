@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import curva from '../assets/static/ondita.svg';
-import {  Link } from 'react-router-dom';
 
 const CategoriesSection = () => (
   <section className='categories-home'>
@@ -19,46 +19,46 @@ const CategoriesSection = () => (
                 <h2>
                 ropa
                 </h2>
-              
+
               </figcaption>
             </figure>
           </div>
-          </Link>
-          <Link to= '/babys'>
-          <div className='categories-home__card'>
-          <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='demo' />
-            <figcaption>
-              <h2>
-               Bebes
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
-          </Link>
-          <Link to= '/handcrafts'>
-        <div className='categories-home__card'>
-          <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
-            <figcaption>
-              <h2>
-                Artesanias
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
         </Link>
-        <Link to= '/food'>
-        <div className='categories-home__card'>
-          <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
-            <figcaption>
-              <h2>
+        <Link to='/babys'>
+          <div className='categories-home__card'>
+              <figure className='image'>
+              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='demo' />
+              <figcaption>
+                <h2>
+               Bebes
+                </h2>
+              </figcaption>
+            </figure>
+            </div>
+        </Link>
+        <Link to='/handcrafts'>
+          <div className='categories-home__card'>
+            <figure className='image'>
+              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
+              <figcaption>
+                <h2>
+                Artesanias
+                </h2>
+              </figcaption>
+            </figure>
+          </div>
+        </Link>
+        <Link to='/food'>
+          <div className='categories-home__card'>
+            <figure className='image'>
+              <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
+              <figcaption>
+                <h2>
                 Comida
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
+                </h2>
+              </figcaption>
+            </figure>
+          </div>
         </Link>
       </div>
     </div>
