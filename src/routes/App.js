@@ -17,28 +17,27 @@ import Handcrafts from '../components/Handcrafts';
 import Food from '../components/Food';
 import PurchaseMade from '../components/PurchaseMade';
 
-
 const App = () => (
-    <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/categorias' component={Home} />
-        <Route exact path='/cart' component={Cart} />
-        <Route exact path='/wishes' component={Wishes} />
-        <Route exact path='/checkout' component={Checkout} />
-        <Route exact path='/userprofile' component={UserProfile} />
-        <Route exact path='/stores' component={Stores} />
-        <Route exact path='/card' component={Card} />
-        <Route exact path='/clothes' component={Clothes} />
-        <Route exact path='/babys' component={Babys} />
-        <Route exact path='/handcrafts' component={Handcrafts} />
-        <Route exact path='/food' component={Food} />
-        <Route exact path='/purchasemade' component={PurchaseMade} />
-        <Route component={NotFound} />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+  <BrowserRouter>
+    <Header />
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/categorias' component={Home} />
+      <Route exact path='/cart' component={Cart} />
+      <Route exact path='/wishes' component={Wishes} />
+      <Route exact path='/checkout' component={Checkout} />
+      <Route exact path='/userprofile' component={UserProfile} />
+      <Route exact path='/stores' component={Stores} />
+      <Route exact path='/card' component={Card} />
+      <Route exact path='/clothes' component={Clothes} />
+      <Route exact path='/babys' component={Babys} />
+      <Route exact path='/handcrafts' component={Handcrafts} />
+      <Route exact path='/food' component={Food} />
+      <Route exact path='/purchasemade' component={PurchaseMade} />
+      <Route component={NotFound} />
+    </Switch>
+    <Footer />
+  </BrowserRouter>
 );
 
 export default App;
