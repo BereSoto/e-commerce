@@ -3,6 +3,23 @@ import visa from '../assets/static/icons8-visa.svg';
 import mastercard from '../assets/static/icons8-mastercard.svg';
 import amex from '../assets/static/icons8-american-express.svg';
 
+const luhnCheck = (num) => {
+  const arr = (`${num}`)
+    .split('')
+    .reverse()
+    .map((x) => parseInt(x));
+  const lastDigit = arr.splice(0, 1)[0];
+  // console.log(arr);
+  let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);
+  sum += lastDigit;
+  // console.log(sum);
+  //console.log(arr.length);
+  return sum % 10 === 0;
+
+};
+
+//4152313311981191
+
 class Checkout extends React.Component {
   constructor(props) {
     super(props);
@@ -16,23 +33,32 @@ class Checkout extends React.Component {
     const { target } = event;
     const value = target.type === 'input' ? target.name : target.value;
     const { name } = target;
-    console.log(`${name} ${value}`);
+    const isValid = this.validate();
+    if (isValid) {
+      console.log(this.state);
+    }
+    //console.log(`${name} ${value}`);
 
     this.setState({
       [name]: value,
-    });
-    const luhnCheck = (num) => {
-      const arr = (`${num}`)
-        .split('')
-        .reverse()
-        .map((x) => parseInt(x));
-      const lastDigit = arr.splice(0, 1)[0];
-      let sum = arr.reduce((acc, val, i) => (i % 2 !== 0 ? acc + val : acc + ((val * 2) % 9) || 9), 0);
-      sum += lastDigit;
-      return sum % 10 === 0;
 
-    };
-    console.log(luhnCheck(''));
+    });
+
+    //console.log(luhnCheck(`${value}`));
+    switch (`${value[0]}`) {
+      case '4': console.log('Visa');
+        break;
+      case '5': console.log('Mastercard');
+        break;
+      default: console.log('Otra');
+        break;
+    }
+    if (`${value.length}` == 16 && luhnCheck(`${value}`)) {
+      console.log('Tarjeta Valida');
+    } else if (`${value.length}` == 16 && !luhnCheck(`${value}`)) {
+      console.log('tarjeta invalida');
+    }
+
   }
 
   render() {
@@ -54,7 +80,9 @@ Nombre que aparece en la tarjeta
                   className='form__control'
                   id='owner'
                   onChange={this.handleInputChange}
+
                 />
+
               </label>
 
             </div>
@@ -81,6 +109,7 @@ Número de tarjeta
                   id='cardNumber'
                   onChange={this.handleInputChange}
                 />
+                <div style={{ color: 'green' }}>{this.state.valid}</div>
               </label>
 
             </div>
