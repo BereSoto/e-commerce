@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import curva from '../assets/static/ondita.svg';
-import gradiente from "../assets/static/img/gradient.png";
-import {  Link } from 'react-router-dom';
-
+import gradiente from '../assets/static/img/gradient.png';
+// import {  Link } from 'react-router-dom';
 
 const CategoriesSection = () => (
   <section className='categories-home'>
@@ -30,39 +29,39 @@ const CategoriesSection = () => (
         </Link>
         <Link to='/babys'>
           <div className='categories-home__card'>
-          <figure className='image'>
-            <img src={gradiente} alt='demo' />
-            <figcaption>
-              <h2>
+            <figure className='image'>
+              <img src={gradiente} alt='demo' />
+              <figcaption>
+                <h2>
                BEBÉS
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
-          </Link>
-          <Link to= '/handcrafts'>
-        <div className='categories-home__card'>
-          <figure className='image'>
-            <img src={gradiente} alt='' />
-            <figcaption>
-              <h2>
-                ARTESANIAS
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
+                </h2>
+              </figcaption>
+            </figure>
+          </div>
         </Link>
-        <Link to= '/food'>
-        <div className='categories-home__card'>
-          <figure className='image'>
-            <img src={gradiente} alt='' />
-            <figcaption>
-              <h2>
+        <Link to='/handcrafts'>
+          <div className='categories-home__card'>
+            <figure className='image'>
+              <img src={gradiente} alt='' />
+              <figcaption>
+                <h2>
+                ARTESANIAS
+                </h2>
+              </figcaption>
+            </figure>
+          </div>
+          </Link>
+        <Link to='/food'>
+          <div className='categories-home__card'>
+            <figure className='image'>
+              <img src={gradiente} alt='' />
+              <figcaption>
+                <h2>
                 COMIDA
-              </h2>
-            </figcaption>
-          </figure>
-        </div>
+                </h2>
+              </figcaption>
+            </figure>
+          </div>
         </Link>
       </div>
     </div>
