@@ -7,12 +7,8 @@ const reducer = (state, action) => {
       };
 
     case 'ADD_TO_CART':
-      // let addItem = state.products.find(item => item.id === action.payload.id);
       const exist = state.cart.find(item => item._id === action.payload._id);
-      console.log('estas entrando al action de addToCart');
-      console.log(' action: ', action.payload._id);
       if (exist) {
-        console.log('este producto ya existe en el cart');
         action.payload.quantity += 1;
         action.payload.newPrice = action.payload.quantity * action.payload.price;
         return {
@@ -20,7 +16,6 @@ const reducer = (state, action) => {
           totalCart: state.totalCart + action.payload.price,
         }
       } else {
-        console.log('este producto NO existe en el cart');
         action.payload.quantity = 1;
         action.payload.newPrice = action.payload.price;
         return {
@@ -32,8 +27,28 @@ const reducer = (state, action) => {
     case 'DELETE_PRODUCT':
       return {
         ...state,
-        cart: state.cart.filter(items => items.id !== action.payload.id ),
-        totalCart: state.totalCart - ( Number(action.payload.quantity) * Number(action.payload.price) ),
+        cart: state.cart.filter(items => items._id !== action.payload._id),
+        totalCart: state.totalCart - (Number(action.payload.quantity) * Number(action.payload.price)),
+      };
+    case 'PLUS_QUANTITY':
+      action.payload.quantity += 1;
+      action.payload.newPrice = action.payload.quantity * action.payload.price;
+      return {
+        ...state,
+        totalCart: state.totalCart + action.payload.price,
+      };
+    case 'MINUS_QUANTITY':
+      const isGreaterThanOne = action.payload.quantity > 1;
+      if (isGreaterThanOne) {
+        action.payload.quantity -= 1;
+        action.payload.newPrice = action.payload.quantity * action.payload.price;
+        return {
+          ...state,
+          totalCart: state.totalCart - action.payload.price,
+        }
+      }
+      else {
+        alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
       }
     default:
       return state;
