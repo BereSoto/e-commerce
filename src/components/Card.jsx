@@ -15,7 +15,6 @@ class Card extends React.Component {
 
   handleClick(product) {
     this.props.addToCart(product);
-    console.log('handleClick');
   }
 
   renderProductsList() {

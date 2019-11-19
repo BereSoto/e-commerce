@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.svg';
@@ -60,6 +61,9 @@ class Header extends Component {
               <img src={userIcon} className='header__icon' alt='User Icon' />
             </button>
             <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
+            {this.props.cart.length > 0 &&
+              <div className="header-alert">{this.props.cart.length}</div>
+            }
             <Link to='wishes'>
               <img src={heartIcon} className='header__icon' alt='' />
             </Link>
@@ -71,4 +75,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    cart: state.cart,
+  };
+};
+
+export default connect(mapStateToProps, null)(Header);
