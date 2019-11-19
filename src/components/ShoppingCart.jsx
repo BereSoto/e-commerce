@@ -10,15 +10,19 @@ const ShoppinCart = (props) => {
   };
 
   return (
-    <div className="Checkout">
-      <div className="Checkout-content">
+    <div className='Checkout'>
+      <div className='Checkout-content'>
         {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
-        {cart.map(item => (
-          <div className="Checkout-item" key={item.id}>
-            <div className="Checkout-element">
+        {cart.map((item) => (
+          <div className='Checkout-item' key={item.id}>
+            <div className='Checkout-element'>
               <h4>{item.title}</h4>
-              <span className="element-quantity">  
-                <h4> {item.quantity} </h4>
+              <span className='element-quantity'>
+                <h4>
+                  {' '}
+                  {item.quantity}
+                  {' '}
+                </h4>
               </span>
               <span>
                 $
@@ -29,14 +33,14 @@ const ShoppinCart = (props) => {
                 {item.newPrice}
               </span>
             </div>
-            <button className="element-button" type="button" onClick={() => handleDeleteProduct(item)}>
-              <i className="fas fa-trash-alt" />
+            <button className='element-button' type='button' onClick={() => handleDeleteProduct(item)}>
+              <i className='fas fa-trash-alt' />
             </button>
           </div>
         ))}
       </div>
       {cart.length > 0 && (
-        <div className="Checkout-sidebar">
+        <div className='Checkout-sidebar'>
           <h3>Precio Total:</h3>
           <h4>
             $
@@ -45,10 +49,10 @@ const ShoppinCart = (props) => {
         </div>
       )}
     </div>
-  )
+  );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     cart: state.cart,
     totalCart: state.totalCart,

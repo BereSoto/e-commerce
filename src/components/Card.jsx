@@ -30,16 +30,16 @@ class Card extends React.Component {
               {product.description}
               <p className='product__info--details--name'>{product.title}</p>
               <p className='product__info--details--price'>
-{product.price}
+                {product.price}
 $
-</p>
+              </p>
               <a src='#' />
             </div>
             <div className='product__info--icons'>
               <button type='button' onClick={() => this.handleClick(product)}>
                 <img
-src={imgShoppingCart}
-                  alt='Agregar al carrito' 
+                  src={imgShoppingCart}
+                  alt='Agregar al carrito'
                 />
               </button>
               {/* <img src={imgShare} alt="Compartir"/> */}
