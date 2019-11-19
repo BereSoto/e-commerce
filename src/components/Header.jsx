@@ -61,7 +61,7 @@ class Header extends Component {
               />
             </button>
 
-            <Link to='/cart'><img src={carIcon} className='header__icon' alt='' /></Link>
+            <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
             <Link to='wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
           </div>
         </div>

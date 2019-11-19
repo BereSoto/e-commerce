@@ -16,7 +16,7 @@ import Babys from '../components/Babys';
 import Handcrafts from '../components/Handcrafts';
 import Food from '../components/Food';
 import PurchaseMade from '../components/PurchaseMade';
-
+import ShoppingCart from '../components/ShoppingCart';
 
 const App = () => (
     <BrowserRouter>
@@ -30,6 +30,7 @@ const App = () => (
         <Route exact path='/userprofile' component={UserProfile} />
         <Route exact path='/stores' component={Stores} />
         <Route exact path='/card' component={Card} />
+        <Route exact path='/shoppingCart' component={ShoppingCart} />
         <Route exact path='/clothes' component={Clothes} />
         <Route exact path='/babys' component={Babys} />
         <Route exact path='/handcrafts' component={Handcrafts} />
