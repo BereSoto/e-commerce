@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../actions';
-
-import imgShare from '../assets/static/share.png';
+import { fetchProducts, addToCart } from '../actions';
 import imgShoppingCart from '../assets/static/shopping-cart.png';
 import imgWishlist from '../assets/static/wishlist.png';
 
@@ -11,33 +9,39 @@ class Clothes extends React.Component {
     this.props.fetchProducts();
   }
 
+  handleClick(product) {
+    this.props.addToCart(product);
+    console.log('handleClick');
+  }
+
   renderProductsList() {
     return this.props.products.map((product) => {
 
       if (product.categories[0] === 'ropa') {
 
         return (
-          <div className='product'>
-            <div className='product__image'>
+          <div className='card-item'>
+            <div className='card-item__image'>
               <img alt='Producto' src={product.image} />
             </div>
-            <div className='product__info'>
-              <div className='product__info--details'>
-                {product.description}
-                <p className='product__info--details--name'>{product.title}</p>
-                <p className='product__info--details--price'>
+            <div className='card-item__info'>
+              <div className='card-item__product'>
+                <h5>
+                  {product.description}
+                </h5>
+                <p>{product.title}</p>
+                <p>
                   {product.price}
 $
                 </p>
                 <a src='#' />
               </div>
-              <div className='product__info--icons'>
+              <div className='card-item__icons'>
                 <img
                   src={imgShoppingCart}
                   alt='Agregar al carrito'
 
                 />
-                {/* <img src={imgShare} alt="Compartir"/> */}
                 <img src={imgWishlist} alt='Favoritos' />
               </div>
             </div>
@@ -49,15 +53,22 @@ $
 
   render() {
     return (
-      <div className='Products'>
-        <div className='Products-items'>{this.renderProductsList()}</div>
+      <div className='card-products'>
+        <div className='card-products__items'>{this.renderProductsList()}</div>
       </div>
     );
   }
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.productsReducers;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+  };
 };
 
-export default connect(mapStateToProps, { fetchProducts })(Clothes);
+const mapDispatchToProps = {
+  fetchProducts,
+  addToCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clothes);
