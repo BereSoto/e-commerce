@@ -5,9 +5,6 @@ import { fetchProducts, addToCart } from '../actions';
 import carIcon from '../assets/static/car-icon-card.svg';
 import heartIcon from '../assets/static/heart-icon-card.svg';
 
-import imgShoppingCart from '../assets/static/shopping-cart.png';
-import imgWishlist from '../assets/static/wishlist.png';
-
 class Card extends React.Component {
   componentDidMount() {
     this.props.fetchProducts();
@@ -25,23 +22,25 @@ class Card extends React.Component {
             <img alt='Producto' src={product.image} />
           </div>
           <div className='card-item__info'>
-            <div className='product__info--details'>
-              {product.description}
-              <p className='product__info--details--name'>{product.title}</p>
-              <p className='product__info--details--price'>
+            <div className='card-item__product'>
+              <h5 className='card-item__description'>
+                {product.description}
+              </h5>
+
+              <p>{product.title}</p>
+              <p>
+              $
                 {product.price}
-                $
               </p>
               <a src='#' />
             </div>
-            <div className='product__info--icons'>
+            <div className='card-item__icons'>
               <button type='button' onClick={() => this.handleClick(product)}>
                 <img
-                  src={imgShoppingCart}
+                  src={carIcon}
                   alt='Agregar al carrito'
                 />
               </button>
-              {/* <img src={imgShare} alt="Compartir"/> */}
               <img src={heartIcon} alt='Favoritos' />
             </div>
           </div>

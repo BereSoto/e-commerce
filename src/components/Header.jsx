@@ -62,8 +62,7 @@ class Header extends Component {
             </button>
             <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
             {this.props.cart.length > 0 &&
-              <div className="header-alert">{this.props.cart.length}</div>
-            }
+              <div className='header-alert'>{this.props.cart.length}</div>}
             <Link to='wishes'>
               <img src={heartIcon} className='header__icon' alt='' />
             </Link>
@@ -75,7 +74,7 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     cart: state.cart,
   };
