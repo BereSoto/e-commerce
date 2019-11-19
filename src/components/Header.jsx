@@ -32,18 +32,18 @@ class Header extends Component {
               <img className='header__img' src={logo} alt='logoprueba' />
             </div>
           </Link>
-          {/*
+
           <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>
             <ul>
-              <li>
+              {/* <li>
                 <a href='/'>Nosotros</a>
-              </li>
+              </li> */}
               <li>
-                <Link to='/'> Categorías</Link>
+                <Link to='/card'>Todos nuestros productos</Link>
               </li>
             </ul>
           </div>
-          */}
+
           {/*
           <div className=' header__search col- col-sm-4 col-md-3 col-lg-3'>
             <input

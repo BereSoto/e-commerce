@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import curva from '../assets/static/ondita.svg';
 import gradiente from '../assets/static/img/gradient.png';
-// import {  Link } from 'react-router-dom';
 
 const CategoriesSection = () => (
   <section className='categories-home'>
@@ -50,7 +49,7 @@ const CategoriesSection = () => (
               </figcaption>
             </figure>
           </div>
-          </Link>
+        </Link>
         <Link to='/food'>
           <div className='categories-home__card'>
             <figure className='image'>
