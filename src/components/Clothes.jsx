@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchProducts } from "../actions";
+import { fetchProducts, addToCart } from "../actions";
 
 
 import imgShare from "../assets/static/share.png";
@@ -12,8 +12,11 @@ class Clothes extends React.Component {
     this.props.fetchProducts();
   }
 
-  
-  
+  handleClick(product) {
+    this.props.addToCart(product);
+    console.log('handleClick');
+  }
+
   renderProductsList() {
     return this.props.products.map(product => {
        
@@ -21,7 +24,7 @@ class Clothes extends React.Component {
         if(product.categories[0]=== "ropa"){
             
       return (
-        <div className="product">
+        <div className="product" key={product._id}>
           <div className="product__image">
             <img alt="Producto" src={product.image} />
           </div>
@@ -33,10 +36,11 @@ class Clothes extends React.Component {
               <a src="#"></a>
             </div>
             <div className="product__info--icons">
-              <img src={imgShoppingCart}
+              <button type='button' onClick={() => this.handleClick(product)}>
+                <img src={imgShoppingCart}
                  alt="Agregar al carrito"
-                 
-              />
+                />
+              </button>  
               {/* <img src={imgShare} alt="Compartir"/> */}
               <img src={imgWishlist} alt="Favoritos" />
             </div>
@@ -56,10 +60,17 @@ class Clothes extends React.Component {
   }
 }
 
-const mapStateToProps = reducers => {
-  return reducers.productsReducers;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+  };
+};
+
+const mapDispatchToProps = {
+  fetchProducts,
+  addToCart,
 };
 
 
 
-export default connect(mapStateToProps,  { fetchProducts })(Clothes);
+export default connect(mapStateToProps, mapDispatchToProps)(Clothes);
