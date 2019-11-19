@@ -41,7 +41,10 @@ class Card extends React.Component {
                   alt='Agregar al carrito'
                 />
               </button>
-              <img src={heartIcon} alt='Favoritos' />
+              <button>
+                <img src={heartIcon} alt='Favoritos' />
+              </button>
+
             </div>
           </div>
         </div>

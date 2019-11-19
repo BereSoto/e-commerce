@@ -37,11 +37,14 @@ class Clothes extends React.Component {
                 <a src='#' />
               </div>
               <div className='card-item__icons'>
-                <img
-                  src={carIcon}
-                  alt='Agregar al carrito'
+                <button type='button' onClick={() => this.handleClick(product)}>
+                  <img
+                    src={carIcon}
+                    alt='Agregar al carrito'
 
-                />
+                  />
+                </button>
+
                 <img src={heartIcon} alt='Favoritos' />
               </div>
             </div>
