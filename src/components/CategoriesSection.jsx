@@ -1,9 +1,12 @@
 import React from 'react';
 import curva from '../assets/static/ondita.svg';
+import gradiente from "../assets/static/img/gradient.png";
 import {  Link } from 'react-router-dom';
+
 
 const CategoriesSection = () => (
   <section className='categories-home'>
+    <h2>Categorías</h2>
     <div className=''>
       <img src={curva} className='curva' alt='' />
     </div>
@@ -14,10 +17,10 @@ const CategoriesSection = () => (
         <Link to='/clothes'>
           <div className='categories-home__card'>
             <figure className='image'>
-              <img src='https://e-moms.s3.us-east-2.amazonaws.com/maizajo/naranja.jpg' alt='demo' />
+              <img src={gradiente} alt='demo' className='categories-home__img' />
               <figcaption>
                 <h2>
-                ropa
+                ROPA
                 </h2>
               
               </figcaption>
@@ -27,10 +30,10 @@ const CategoriesSection = () => (
           <Link to= '/babys'>
           <div className='categories-home__card'>
           <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='demo' />
+            <img src={gradiente} alt='demo' />
             <figcaption>
               <h2>
-               Bebes
+               BEBÉS
               </h2>
             </figcaption>
           </figure>
@@ -39,10 +42,10 @@ const CategoriesSection = () => (
           <Link to= '/handcrafts'>
         <div className='categories-home__card'>
           <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
+            <img src={gradiente} alt='' />
             <figcaption>
               <h2>
-                Artesanias
+                ARTESANIAS
               </h2>
             </figcaption>
           </figure>
@@ -51,10 +54,10 @@ const CategoriesSection = () => (
         <Link to= '/food'>
         <div className='categories-home__card'>
           <figure className='image'>
-            <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample38.jpg' alt='' />
+            <img src={gradiente} alt='' />
             <figcaption>
               <h2>
-                Comida
+                COMIDA
               </h2>
             </figcaption>
           </figure>
@@ -62,11 +65,12 @@ const CategoriesSection = () => (
         </Link>
       </div>
     </div>
+    {/*
     <div className='categories-home__btn'>
       <a href='' className='categories-home__text'>Descubre más</a>
 
     </div>
-
+    */}
   </section>
 
 );

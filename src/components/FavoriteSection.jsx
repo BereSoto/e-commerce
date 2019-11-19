@@ -3,7 +3,7 @@ import React from 'react';
 const FavoriteteSection = () => (
   <section className='favorite-home'>
     <div className='favorite-home__content'>
-      <h2>Categorias</h2>
+      <h2>Los más vendidos</h2>
       <div className='favorite-home__cards'>
         <div className='favorite-home__card'>
           <figure className='image'>
