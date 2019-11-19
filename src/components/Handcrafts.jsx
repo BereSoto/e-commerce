@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts, addToCart } from '../actions';
-import imgShoppingCart from '../assets/static/shopping-cart.png';
-import imgWishlist from '../assets/static/wishlist.png';
+import carIcon from '../assets/static/car-icon-card.svg';
+import heartIcon from '../assets/static/heart-icon-card.svg';
 
 class Handcrafts extends React.Component {
   componentDidMount() {
@@ -34,20 +34,19 @@ class Handcrafts extends React.Component {
                 </h5>
                 <p>{product.title}</p>
                 <p>
+                  $
                   {product.price}
-$
                 </p>
                 <a src='#' />
               </div>
               <div className='card-item__icons'>
                 <button type='button' onClick={() => this.handleClick(product)}>
                   <img
-                    src={imgShoppingCart}
+                    src={carIcon}
                     alt='Agregar al carrito'
                   />
                 </button>
-                {/* <img src={imgShare} alt="Compartir"/> */}
-                <img src={imgWishlist} alt='Favoritos' />
+                <img src={heartIcon} alt='Favoritos' />
               </div>
             </div>
           </div>
