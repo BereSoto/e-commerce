@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { fetchProducts } from '../actions';
+import React from "react";
+import { connect } from "react-redux";
+import { fetchProducts, addToCart } from "../actions";
 
 import imgShare from '../assets/static/share.png';
 import imgShoppingCart from '../assets/static/shopping-cart.png';
@@ -11,35 +11,36 @@ class Clothes extends React.Component {
     this.props.fetchProducts();
   }
 
+  handleClick(product) {
+    this.props.addToCart(product);
+    console.log('handleClick');
+  }
+
   renderProductsList() {
     return this.props.products.map((product) => {
 
-      if (product.categories[0] === 'ropa') {
-
-        return (
-          <div className='product'>
-            <div className='product__image'>
-              <img alt='Producto' src={product.image} />
+        if(product.categories[0]=== "ropa"){
+            
+      return (
+        <div className="product" key={product._id}>
+          <div className="product__image">
+            <img alt="Producto" src={product.image} />
+          </div>
+          <div className="product__info">
+            <div className="product__info--details">
+              {product.description}
+              <p className="product__info--details--name">{product.title}</p>
+              <p className="product__info--details--price">{product.price}$</p>
+              <a src="#"></a>
             </div>
-            <div className='product__info'>
-              <div className='product__info--details'>
-                {product.description}
-                <p className='product__info--details--name'>{product.title}</p>
-                <p className='product__info--details--price'>
-                  {product.price}
-$
-                </p>
-                <a src='#' />
-              </div>
-              <div className='product__info--icons'>
-                <img
-                  src={imgShoppingCart}
-                  alt='Agregar al carrito'
-
+            <div className="product__info--icons">
+              <button type='button' onClick={() => this.handleClick(product)}>
+                <img src={imgShoppingCart}
+                 alt="Agregar al carrito"
                 />
-                {/* <img src={imgShare} alt="Compartir"/> */}
-                <img src={imgWishlist} alt='Favoritos' />
-              </div>
+              </button>  
+              {/* <img src={imgShare} alt="Compartir"/> */}
+              <img src={imgWishlist} alt="Favoritos" />
             </div>
           </div>
         );
@@ -56,8 +57,17 @@ $
   }
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.productsReducers;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+  };
 };
 
-export default connect(mapStateToProps, { fetchProducts })(Clothes);
+const mapDispatchToProps = {
+  fetchProducts,
+  addToCart,
+};
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clothes);

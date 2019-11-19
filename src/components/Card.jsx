@@ -15,7 +15,6 @@ class Card extends React.Component {
 
   handleClick(product) {
     this.props.addToCart(product);
-    console.log('handleClick');
   }
 
   renderProductsList() {
@@ -31,7 +30,7 @@ class Card extends React.Component {
               <p className='product__info--details--name'>{product.title}</p>
               <p className='product__info--details--price'>
                 {product.price}
-$
+                $
               </p>
               <a src='#' />
             </div>

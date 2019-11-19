@@ -11,13 +11,26 @@ export const fetchProducts = () => (dispatch) => {
   });
 };
 
-//Agregar al carrito
+//Agregar al carrito de compras
 export const addToCart = (payload) => ({
   type: 'ADD_TO_CART',
   payload,
 });
 
+// elimar del carrito de compras
 export const deleteProduct = (payload) => ({
   type: 'DELETE_PRODUCT',
+  payload,
+});
+
+// aumenta la cantidad de productos en shopping-cart
+export const plusQuantity = (payload) => ({
+  type: 'PLUS_QUANTITY',
+  payload,
+});
+
+// dismunuye la cantidad de productos en shopping-cart
+export const minusQuantity = (payload) => ({
+  type: 'MINUS_QUANTITY',
   payload,
 });

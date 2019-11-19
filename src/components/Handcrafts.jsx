@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts } from '../actions';
+import { fetchProducts, addToCart  } from '../actions';
 
 import imgShare from '../assets/static/share.png';
 import imgShoppingCart from '../assets/static/shopping-cart.png';
@@ -9,6 +9,11 @@ import imgWishlist from '../assets/static/wishlist.png';
 class Handcrafts extends React.Component {
   componentDidMount() {
     this.props.fetchProducts();
+  }
+
+  handleClick(product) {
+    this.props.addToCart(product);
+    console.log('handleClick');
   }
 
   renderProductsList() {
@@ -20,7 +25,7 @@ class Handcrafts extends React.Component {
       ) {
 
         return (
-          <div className='product'>
+          <div className='product' key={product._id}>
             <div className='product__image'>
               <img alt='Producto' src={product.image} />
             </div>
@@ -35,11 +40,12 @@ $
                 <a src='#' />
               </div>
               <div className='product__info--icons'>
-                <img
-                  src={imgShoppingCart}
-                  alt='Agregar al carrito'
-
-                />
+                <button type='button' onClick={() => this.handleClick(product)}>
+                  <img
+                    src={imgShoppingCart}
+                    alt='Agregar al carrito'
+                  />
+                </button>  
                 {/* <img src={imgShare} alt="Compartir"/> */}
                 <img src={imgWishlist} alt='Favoritos' />
               </div>
@@ -59,8 +65,15 @@ $
   }
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.productsReducers;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products,
+  };
 };
 
-export default connect(mapStateToProps, { fetchProducts })(Handcrafts);
+const mapDispatchToProps = {
+  fetchProducts,
+  addToCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Handcrafts);
