@@ -44,7 +44,6 @@ $
 
                   />
                 </button>
-                {/* <img src={imgShare} alt="Compartir"/> */}
                 <img src={imgWishlist} alt='Favoritos' />
               </div>
             </div>

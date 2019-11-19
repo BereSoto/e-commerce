@@ -42,7 +42,6 @@ class Babys extends React.Component {
                     alt='Agregar al carrito'
                   />
                 </button>
-                {/* <img src={imgShare} alt="Compartir"/> */}
                 <img src={imgWishlist} alt='Favoritos' />
               </div>
             </div>
