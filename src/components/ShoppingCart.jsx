@@ -36,11 +36,11 @@ const ShoppinCart = (props) => {
                 <span className='cart-element__image'>
                   <img alt='Producto' src={item.image} />
                 </span>
-                <span><h4>{item.title}</h4></span>
+                <h4 className='cart-element__title'>{item.title}</h4>
 
                 <span className='element-quantity'>
                   <h4>
-                    {item.quantity}
+                    {/* {item.quantity} */}
                   </h4>
                   <span className='element-quantity__icons'>
                     <button className='element-button' type='button' onClick={() => handlePlusQuantity(item)}>
@@ -55,7 +55,7 @@ const ShoppinCart = (props) => {
                   $
                   {item.price}
                 </span>
-                <span>
+                <span className='element-quantity__newprice'>
                   $
                   {item.newPrice}
                 </span>
