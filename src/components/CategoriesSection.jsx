@@ -5,13 +5,9 @@ import gradiente from '../assets/static/img/gradient.png';
 
 const CategoriesSection = () => (
   <section className='categories-home'>
-    <h2>Categorías</h2>
-    <div className=''>
-      <img src={curva} className='curva' alt='' />
-    </div>
-
     <div className='categories-home__content'>
-      <h2>Categorias</h2>
+      <h2 className='categories-home__title'>CATEGORÍAS</h2>
+      <img src={curva} className='curva' alt='' />
       <div className='categories-home__cards'>
         <Link to='/clothes'>
           <div className='categories-home__card'>

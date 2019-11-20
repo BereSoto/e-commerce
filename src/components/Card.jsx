@@ -62,6 +62,7 @@ class Card extends React.Component {
     console.log(this.props.products);
     return (
       <div className='card-products'>
+        <h2 className='card-products__title'>Conoce todos nuestros productos</h2>
         <div className='card-products__items'>{this.renderProductsList()}</div>
       </div>
     );

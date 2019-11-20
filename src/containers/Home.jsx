@@ -3,17 +3,11 @@ import Hero from '../components/Hero';
 import CategoriesSection from '../components/CategoriesSection';
 import FavoriteSection from '../components/FavoriteSection';
 
-
 const Home = () => (
-  <section>
+  <section className='home'>
     <Hero />
-    <div>
-      <CategoriesSection />
-    </div>
-    <div>
-      <FavoriteSection />
-    </div>
-
+    <CategoriesSection />
+    <FavoriteSection />
   </section>
 
 );
