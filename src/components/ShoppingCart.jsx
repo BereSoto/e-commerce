@@ -1,13 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deleteProduct } from '../actions';
-import { plusQuantity } from '../actions';
-import { minusQuantity } from '../actions';
+import { deleteProduct, plusQuantity, minusQuantity } from '../actions';
+
 import plus from '../assets/static/icon-plus.svg';
 import minus from '../assets/static/icon-minus.svg';
 import del from '../assets/static/icon-delete.svg';
-
 
 const ShoppinCart = (props) => {
   const { cart, totalCart } = props;
@@ -28,19 +26,23 @@ const ShoppinCart = (props) => {
     <>
       <div className='cart'>
         <div className='cart_container'>
-          {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
+          {cart.length > 0 ? <h3>Carrito de compras:</h3> : <h2>Sin Pedidos</h2>}
           {cart.map((item) => (
             <div className='cart-item' key={item._id}>
               <div className='cart-element'>
-                <span><h4>{item.title}</h4></span>
+                <button className='element-button' type='button' onClick={() => handleDeleteProduct(item)}>
+                  <img src={del} alt='Eliminar' />
+                </button>
                 <span className='cart-element__image'>
                   <img alt='Producto' src={item.image} />
                 </span>
+                <span><h4>{item.title}</h4></span>
+
                 <span className='element-quantity'>
                   <h4>
                     {item.quantity}
                   </h4>
-                  <span className="element-quantity__icons">
+                  <span className='element-quantity__icons'>
                     <button className='element-button' type='button' onClick={() => handlePlusQuantity(item)}>
                       <img src={plus} alt='Agregar' />
                     </button>
@@ -57,11 +59,7 @@ const ShoppinCart = (props) => {
                   $
                   {item.newPrice}
                 </span>
-                <span>
-                  <button className='element-button' type='button' onClick={() => handleDeleteProduct(item)}>
-                    <img src={del} alt='Eliminar' />
-                  </button>
-                </span>
+                <span />
               </div>
             </div>
           ))}
@@ -76,9 +74,9 @@ const ShoppinCart = (props) => {
           </div>
         )}
       </div>
-      <div className="cart-checkout">
+      <div className='cart-checkout'>
         <Link to='/checkout'>
-          <button className="cart-checkout__button" type='button'>
+          <button className='cart-checkout__button' type='button'>
             Proceder con el pago
           </button>
         </Link>
