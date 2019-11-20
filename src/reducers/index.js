@@ -5,29 +5,29 @@ const reducer = (state, action) => {
         ...state,
         products: action.payload,
       };
-
+      //shopingcart
     case 'ADD_TO_CART':
-      const exist = state.cart.find(item => item._id === action.payload._id);
+      const exist = state.cart.find((item) => item._id === action.payload._id);
       if (exist) {
         action.payload.quantity += 1;
         action.payload.newPrice = action.payload.quantity * action.payload.price;
         return {
           ...state,
           totalCart: state.totalCart + action.payload.price,
-        }
-      } else {
-        action.payload.quantity = 1;
-        action.payload.newPrice = action.payload.price;
-        return {
-          ...state,
-          cart: [...state.cart, action.payload ],
-          totalCart: state.totalCart + Number(action.payload.price),
-        }
+        };
       }
+      action.payload.quantity = 1;
+      action.payload.newPrice = action.payload.price;
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+        totalCart: state.totalCart + Number(action.payload.price),
+      };
+
     case 'DELETE_PRODUCT':
       return {
         ...state,
-        cart: state.cart.filter(items => items._id !== action.payload._id),
+        cart: state.cart.filter((items) => items._id !== action.payload._id),
         totalCart: state.totalCart - (Number(action.payload.quantity) * Number(action.payload.price)),
       };
     case 'PLUS_QUANTITY':
@@ -45,11 +45,56 @@ const reducer = (state, action) => {
         return {
           ...state,
           totalCart: state.totalCart - action.payload.price,
-        }
+        };
       }
-      else {
-        alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
+
+      alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
+
+      //Lista de deseos
+    case 'ADD_TO_WISHES':
+      const existWishes = state.wishes.find((item) => item._id === action.payload._id);
+      if (existWishes) {
+        action.payload.quantity += 1;
+        action.payload.newPrice = action.payload.quantity * action.payload.price;
+        return {
+          ...state,
+          totalWishes: state.totalWishes + action.payload.price,
+        };
       }
+      action.payload.quantity = 1;
+      action.payload.newPrice = action.payload.price;
+      return {
+        ...state,
+        wishes: [...state.wishes, action.payload],
+        totalWishes: state.totalWishes + Number(action.payload.price),
+      };
+
+    case 'DELETE_PRODUCT_WISHES':
+      return {
+        ...state,
+        wishes: state.wishes.filter((items) => items._id !== action.payload._id),
+        totalWishes: state.totalWishes - (Number(action.payload.quantity) * Number(action.payload.price)),
+      };
+    case 'PLUS_QUANTITY_WISHES':
+      action.payload.quantity += 1;
+      action.payload.newPrice = action.payload.quantity * action.payload.price;
+      return {
+        ...state,
+        totalWishes: state.totalWishes + action.payload.price,
+      };
+    case 'MINUS_QUANTITY_WISHES':
+      const isGreater = action.payload.quantity > 1;
+      if (isGreater) {
+        action.payload.quantity -= 1;
+        action.payload.newPrice = action.payload.quantity * action.payload.price;
+        return {
+          ...state,
+          totalWishes: state.totalWishes - action.payload.price,
+        };
+      }
+
+      alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
+
     default:
       return state;
   }
@@ -57,13 +102,3 @@ const reducer = (state, action) => {
 
 export default reducer;
 
-
-
-
-
-// import { combineReducers } from 'redux';
-// import productsReducers from './productsReducers';
-
-// export default combineReducers({
-//   productsReducers,
-// });

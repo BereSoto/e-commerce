@@ -34,3 +34,28 @@ export const minusQuantity = (payload) => ({
   type: 'MINUS_QUANTITY',
   payload,
 });
+
+// aqui comienza lista de deseos
+//agregar a  lista de deseos
+export const addToWishes = (payload) => ({
+  type: 'ADD_TO_WISHES',
+  payload,
+});
+
+// elimar del carrito de lista de deseos
+export const deleteProductWishes = (payload) => ({
+  type: 'DELETE_PRODUCT_WISHES',
+  payload,
+});
+
+// aumenta la cantidad de productos en lista de deseos
+export const plusQuantityWishes = (payload) => ({
+  type: 'PLUS_QUANTITY_WISHES',
+  payload,
+});
+
+// dismunuye la cantidad de productos en lista de deseos
+export const minusQuantityWishes = (payload) => ({
+  type: 'MINUS_QUANTITY_WISHES',
+  payload,
+});

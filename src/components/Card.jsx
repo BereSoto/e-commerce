@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchProducts, addToCart } from '../actions';
+import { fetchProducts, addToCart, addToWishes } from '../actions';
 import carIcon from '../assets/static/car-icon-card.svg';
 import heartIcon from '../assets/static/heart-icon-card.svg';
 
@@ -10,8 +10,14 @@ class Card extends React.Component {
     this.props.fetchProducts();
   }
 
-  handleClick(product) {
-    this.props.addToCart(product);
+  handleClick(product, functionId) {
+    if (functionId == 1) {
+      this.props.addToCart(product);
+    } else if (functionId == 2) {
+      console.log('entro a funcion addToWishes');
+      this.props.addToWishes(product);
+    }
+
   }
 
   renderProductsList() {
@@ -35,13 +41,13 @@ class Card extends React.Component {
               <a src='#' />
             </div>
             <div className='card-item__icons'>
-              <button type='button' onClick={() => this.handleClick(product)}>
+              <button type='button' onClick={() => this.handleClick(product, 1)}>
                 <img
                   src={carIcon}
                   alt='Agregar al carrito'
                 />
               </button>
-              <button>
+              <button type='button' onClick={() => this.handleClick(product, 2)}>
                 <img src={heartIcon} alt='Favoritos' />
               </button>
 
@@ -71,6 +77,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   fetchProducts,
   addToCart,
+  addToWishes,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
