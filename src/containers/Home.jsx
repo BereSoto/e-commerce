@@ -9,7 +9,6 @@ const Home = () => (
     <CategoriesSection />
     <FavoriteSection />
   </section>
-
 );
 
 // export default connect(mapStateToProps, null)(ProductList);

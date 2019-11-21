@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NotFound = () => (
-  <>
+  <section className='notFound'>
     <div className='face'>
       <div className='band'>
         <div className='red' />
@@ -15,7 +15,7 @@ const NotFound = () => (
     <h1>Oops! Something went wrong!</h1>
     <div className='btn'>Return to Home</div>
     <small>created by Irem Lopsum</small>
-  </>
+  </section>
 );
 
 export default NotFound;

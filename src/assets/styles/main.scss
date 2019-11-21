@@ -19,9 +19,10 @@
 @import "./components/Modal";
 @import url('<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans&display=swap" rel="stylesheet">');
 
-*, body {
+ body {
     font-family: 'Montserrat', sans-serif;
-  
-  
+    background-color:$gb;
+    // height: 100vh;
+    width: 100%;
 }
 
