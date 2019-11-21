@@ -13,6 +13,7 @@ const initialState = {
   totalCart: 0,
   wishes: [],
   totalWishes: 0,
+  user:{},
 };
 
 const composeEnhacer = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
