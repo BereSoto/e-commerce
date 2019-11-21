@@ -94,6 +94,12 @@ const reducer = (state, action) => {
       }
 
       alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
+    
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
+      };
 
     default:
       return state;
