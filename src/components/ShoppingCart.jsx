@@ -31,7 +31,8 @@ const ShoppinCart = (props) => {
             <div className='cart-item' key={item._id}>
               <div className='cart-element'>
                 <button className='element-button' type='button' onClick={() => handleDeleteProduct(item)}>
-                  <img src={del} alt='Eliminar' />
+                &times;
+                  {/* <img src={del} alt='Eliminar' /> */}
                 </button>
                 <span className='cart-element__image'>
                   <img alt='Producto' src={item.image} />
@@ -66,21 +67,23 @@ const ShoppinCart = (props) => {
         </div>
         {cart.length > 0 && (
           <div className='total_container'>
-            <h3>Precio Total:</h3>
-            <h4>
+            <p>Precio Total:</p>
+            <p>
               $
               {totalCart}
-            </h4>
+            </p>
+            <div className='cart-checkout'>
+              <Link to='/checkout'>
+                <button className='form__btn' type='button'>
+              Proceder con el pago
+                </button>
+              </Link>
+            </div>
           </div>
+
         )}
       </div>
-      <div className='cart-checkout'>
-        <Link to='/checkout'>
-          <button className='cart-checkout__button' type='button'>
-            Proceder con el pago
-          </button>
-        </Link>
-      </div>
+
     </>
   );
 };

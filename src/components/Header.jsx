@@ -27,14 +27,14 @@ class Header extends Component {
 
     return (
       <header className='header'>
-        <div className='header__content'>
+        <div className='row'>
           <Link to='/'>
-            
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 header_brand'>
               <img className='header__img' src={logo} alt='logoprueba' />
-            
+            </div>
           </Link>
 
-          <div className='header__menu'>
+          <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>
             <ul>
               {/* <li>
                 <a href='/'>Nosotros</a>
@@ -56,7 +56,7 @@ class Header extends Component {
           */}
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
 
-          <div className='header__icons__menu'>
+          <div className='col-2 offset-7 col-sm-2 offset-sm-7 col-md-2 offset-md-7 col-lg-2 offset-md-7 header__icons__menu'>
             <button type='button' onClick={this.changeOpen}>
               <img src={userIcon} className='header__icon' alt='User Icon' />
             </button>
