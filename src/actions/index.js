@@ -59,3 +59,11 @@ export const minusQuantityWishes = (payload) => ({
   type: 'MINUS_QUANTITY_WISHES',
   payload,
 });
+
+
+// Elimina elementos a la lista de deseos
+export const removeToWishes = (payload) => ({
+  type: 'REMOVE_TO_WISHES',
+  payload,
+});
+
