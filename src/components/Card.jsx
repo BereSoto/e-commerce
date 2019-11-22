@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts, addToCart, addToWishes } from '../actions';
-import carIcon from '../assets/static/car-icon-card.svg';
+import carIcon from '../assets/static/car-icon-b.svg';
 import heartIcon from '../assets/static/heart-icon-card.svg';
 
 class Card extends React.Component {

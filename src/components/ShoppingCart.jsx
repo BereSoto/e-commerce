@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deleteProduct, plusQuantity, minusQuantity } from '../actions';
-
 import plus from '../assets/static/icon-plus.svg';
 import minus from '../assets/static/icon-minus.svg';
 

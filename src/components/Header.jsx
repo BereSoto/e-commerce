@@ -22,15 +22,15 @@ class Header extends Component {
     }));
   }
 
-  readCookie (name){
-    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+  readCookie(name) {
+    return decodeURIComponent(document.cookie.replace(new RegExp(`(?:(?:^|.*;)\\s*${name.replace(/[\-\.\+\*]/g, '\\$&')}\\s*\\=\\s*([^;]*).*$)|^.*$`), '$1')) || null;
   }
 
-  isLoggedIn(){
-    return this.readCookie("id")
+  isLoggedIn() {
+    return this.readCookie('id');
   }
 
-  handleLogout(){
+  handleLogout() {
     document.cookie = 'email=';
     document.cookie = 'name=';
     document.cookie = 'id=';
@@ -43,14 +43,14 @@ class Header extends Component {
 
     return (
       <header className='header'>
-        <div className='row'>
+        <div className='row header_container'>
           <Link to='/'>
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 header_brand'>
+            <div className='header__brand'>
               <img className='header__img' src={logo} alt='logoprueba' />
             </div>
           </Link>
 
-          <div className='header__menu col- col-sm-4 col-md-4 col-lg-4'>
+          <div className='header__menu'>
             <ul>
               {/* <li>
                 <a href='/'>Nosotros</a>
@@ -71,26 +71,30 @@ class Header extends Component {
           </div>
           */}
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
-          <div className='col-2 offset-7 col-sm-2 offset-sm-7 col-md-2 offset-md-7 col-lg-2 offset-md-7 header__icons__menu'>
-          {!this.isLoggedIn() && (  
-            <button type='button' onClick={this.changeOpen}>
-              <img src={userIcon} className='header__icon' alt='User Icon' />
-            </button>
-          )}
-          {this.isLoggedIn() && (
-            <div> 
-              <img src={this.readCookie("image")} className='header__icon' alt='User Icon' />
-              <p>Hola {this.readCookie("name")}</p>
-              <button type='button' onClick={this.handleLogout}>
-                <p>Log out</p>
+          <div className=' header-icons__menu'>
+            {!this.isLoggedIn() && (
+              <button type='button' onClick={this.changeOpen}>
+                <img src={userIcon} className='header-icons__item' alt='User Icon' />
               </button>
-            </div>  
-          )}
-            <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
+            )}
+            {this.isLoggedIn() && (
+              <div className='hola'>
+                <img src={this.readCookie('image')} className='img-user' alt='User Icon' />
+                <p>
+                      Hola
+                  {' '}
+                  {this.readCookie('name')}
+                </p>
+                <button type='button' onClick={this.handleLogout}>
+                  <p>Log out</p>
+                </button>
+              </div>
+            )}
+            <Link to='/shoppingCart'><img src={carIcon} className='header-icons__item' alt='' /></Link>
             {this.props.cart.length > 0 &&
               <div className='header-alert'>{this.props.cart.length}</div>}
 
-            <Link to='/wishes'><img src={heartIcon} className='header__icon' alt='' /></Link>
+            <Link to='/wishes'><img src={heartIcon} className='header-icons__item' alt='' /></Link>
             {this.props.wishes.length > 0 &&
               <div className='header-alert'>{this.props.wishes.length}</div>}
           </div>
