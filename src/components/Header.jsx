@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import logo from '../assets/static/logo.png';
 import userIcon from '../assets/static/user-icon.svg';
 import carIcon from '../assets/static/car-icon.svg';
@@ -71,7 +71,6 @@ class Header extends Component {
           </div>
           */}
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
-<<<<<<< HEAD
           <div className=' header-icons__menu'>
             {!this.isLoggedIn() && (
               <button type='button' onClick={this.changeOpen}>
@@ -83,19 +82,6 @@ class Header extends Component {
                 <img src={this.readCookie('image')} className='img-user' alt='User Icon' />
                 <p>
                       Hola
-=======
-          <div className='col-2 offset-7 col-sm-2 offset-sm-7 col-md-2 offset-md-7 col-lg-2 offset-md-7 header__icons__menu'>
-            {!this.isLoggedIn() && (
-              <button type='button' onClick={this.changeOpen}>
-                <img src={userIcon} className='header__icon' alt='User Icon' />
-              </button>
-            )}
-            {this.isLoggedIn() && (
-              <div>
-                <img src={this.readCookie('image')} className='header__icon' alt='User Icon' />
-                <p>
-Hola
->>>>>>> master
                   {' '}
                   {this.readCookie('name')}
                 </p>
@@ -104,11 +90,7 @@ Hola
                 </button>
               </div>
             )}
-<<<<<<< HEAD
             <Link to='/shoppingCart'><img src={carIcon} className='header-icons__item' alt='' /></Link>
-=======
-            <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
->>>>>>> master
             {this.props.cart.length > 0 &&
               <div className='header-alert'>{this.props.cart.length}</div>}
 

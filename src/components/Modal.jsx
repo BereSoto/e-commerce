@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { loginUser } from '../actions';
 
-
 const Modal = (props) => {
-  const { showModal, closeCb } = props 
+  const { showModal, closeCb } = props;
   const [form, setValues] = useState({
     email: '',
   });
@@ -21,7 +20,6 @@ const Modal = (props) => {
     props.loginUser(form, '/');
   };
 
-
   const MODAL = showModal ? (
     <div className='modal' role='dialog'>
       <div className='modal__backdrop' />
@@ -32,11 +30,11 @@ const Modal = (props) => {
         <div className='modal__header'>
           INICIA SESIÓN
         </div>
-        <form className='modal__form' >
+        <form className='modal__form'>
           <label htmlFor='email' className='modal__label'>Correo electronico</label>
-          <input type='text' name='email' id='email' placeholder='correo electronico' onChange={handleInput}/>
+          <input type='text' name='email' id='email' placeholder='correo electronico' onChange={handleInput} />
           <label htmlFor='password' className='modal__label'>Contraseña</label>
-          <input type='text' name='password' id='password' placeholder='contraseña' onChange={handleInput}/>
+          <input type='text' name='password' id='password' placeholder='contraseña' onChange={handleInput} />
           <p><button className='modal__btn' type='submit' onClick={handleSubmit}>Enviar</button></p>
           {/*
           <p>O inicia con</p>
@@ -55,7 +53,6 @@ const Modal = (props) => {
 
   );
 };
-
 
 const mapDispatchToProps = {
   loginUser,
