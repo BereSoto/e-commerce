@@ -35,7 +35,7 @@ class _CardForm extends React.Component {
     stripe
       .createToken()
       .then(({ token }) => {
-        return Axios.post('http://localhost:3000/api/payments/charge', {
+        return Axios.post('http://e-moms-api.now.sh/api/payments/charge', {
           token_id: token.id,
           amount: totalCart,
           description: `Compra en e-moms por ${cart.length} items`,
