@@ -22,6 +22,22 @@ class Header extends Component {
     }));
   }
 
+  readCookie (name){
+    return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+  }
+
+  isLoggedIn(){
+    return this.readCookie("id")
+  }
+
+  handleLogout(){
+    document.cookie = 'email=';
+    document.cookie = 'name=';
+    document.cookie = 'id=';
+    document.cookie = 'token=';
+    window.location.href = '/';
+  };
+
   render() {
     const { isOpen } = this.state;
 
@@ -55,11 +71,21 @@ class Header extends Component {
           </div>
           */}
           <Modal showModal={isOpen} closeCb={this.changeOpen} />
-
           <div className='col-2 offset-7 col-sm-2 offset-sm-7 col-md-2 offset-md-7 col-lg-2 offset-md-7 header__icons__menu'>
+          {!this.isLoggedIn() && (  
             <button type='button' onClick={this.changeOpen}>
               <img src={userIcon} className='header__icon' alt='User Icon' />
             </button>
+          )}
+          {this.isLoggedIn() && (
+            <div> 
+              <img src={this.readCookie("image")} className='header__icon' alt='User Icon' />
+              <p>Hola {this.readCookie("name")}</p>
+              <button type='button' onClick={this.handleLogout}>
+                <p>Log out</p>
+              </button>
+            </div>  
+          )}
             <Link to='/shoppingCart'><img src={carIcon} className='header__icon' alt='' /></Link>
             {this.props.cart.length > 0 &&
               <div className='header-alert'>{this.props.cart.length}</div>}

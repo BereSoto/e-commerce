@@ -1,8 +1,7 @@
 import axios from 'axios';
+import { PROXY_URL, URL_API } from '../constants';
 //const respuesta = await axios.get('http://e-moms-api.now.sh/api/products');
 export const fetchProducts = () => (dispatch) => {
-  const URL_API = 'http://e-moms-api.now.sh/api/products';
-  const PROXY_URL = 'https://obscure-citadel-86298.herokuapp.com/';
   axios.get(`${PROXY_URL}${URL_API}`).then((res) => {
     dispatch({
       type: 'FETCH_PRODUCTS',
@@ -60,10 +59,45 @@ export const minusQuantityWishes = (payload) => ({
   payload,
 });
 
-
 // Elimina elementos a la lista de deseos
 export const removeToWishes = (payload) => ({
   type: 'REMOVE_TO_WISHES',
   payload,
 });
+
+
+//Implementación del login
+
+export const loginRequest = payload => ({
+  type: 'LOGIN_REQUEST',
+  payload,
+});
+
+export const loginUser = ({ email, password }, redirecUrl) => {
+  return (dispatch) => {
+    const URL_API = 'https://e-moms-api.now.sh/api/auth/sign-in';
+    const PROXY_URL = 'https://obscure-citadel-86298.herokuapp.com/';
+    axios({  
+      url: `${PROXY_URL}${URL_API}`,
+      method: 'post',
+      auth: {
+        username: email,
+        password,
+      },
+      data: {
+        "apiKeyToken": "674982815eb94e7ddd3d40bd51842e90533a774767ff79899fc08cce848cca6b"
+      },
+    })
+      .then(({ data }) => {
+        document.cookie = `email=${data.user.email}`;
+        document.cookie = `name=${data.user.name}`;
+        document.cookie = `id=${data.user.id}`;
+        document.cookie = `image=${data.user.imageProfile}`;
+        dispatch(loginRequest(data));
+      })
+      .then(() => {
+        window.location.href = redirecUrl;
+      })
+  };
+};
 
