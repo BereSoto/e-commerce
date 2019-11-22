@@ -43,25 +43,17 @@ class Header extends Component {
 
     return (
       <header className='header'>
-        <div className='row header_container'>
-          <Link to='/'>
-            <div className='header__brand'>
-              <img className='header__img' src={logo} alt='logoprueba' />
-            </div>
-          </Link>
-
-          <div className='header__menu'>
-            <ul>
-              {/* <li>
-                <a href='/'>Nosotros</a>
-              </li> */}
-              <li>
-                <Link to='/card'>Todos nuestros productos</Link>
-              </li>
-            </ul>
+        <Link to='/'>
+          <div className='header__brand'>
+            <img className='header__img' src={logo} alt='logoprueba' />
           </div>
+        </Link>
 
-          {/*
+        <div className='header__menu'>
+          <Link to='/card'>Todos nuestros productos</Link>
+        </div>
+
+        {/*
           <div className=' header__search col- col-sm-4 col-md-3 col-lg-3'>
             <input
               type='text'
@@ -70,35 +62,35 @@ class Header extends Component {
             />
           </div>
           */}
-          <Modal showModal={isOpen} closeCb={this.changeOpen} />
-          <div className=' header-icons__menu'>
-            {!this.isLoggedIn() && (
-              <button type='button' onClick={this.changeOpen}>
-                <img src={userIcon} className='header-icons__item' alt='User Icon' />
-              </button>
-            )}
-            {this.isLoggedIn() && (
-              <div className='hola'>
-                <img src={this.readCookie('image')} className='img-user' alt='User Icon' />
-                <p>
+        <Modal showModal={isOpen} closeCb={this.changeOpen} />
+        <div className=' header-icons__menu'>
+          {!this.isLoggedIn() && (
+            <button type='button' onClick={this.changeOpen}>
+              <img src={userIcon} className='header-icons__item' alt='User Icon' />
+            </button>
+          )}
+          {this.isLoggedIn() && (
+            <div className='hola'>
+              <img src={this.readCookie('image')} className='img-user' alt='User Icon' />
+              <p>
                       Hola
-                  {' '}
-                  {this.readCookie('name')}
-                </p>
-                <button type='button' onClick={this.handleLogout}>
-                  <p>Log out</p>
-                </button>
-              </div>
-            )}
-            <Link to='/shoppingCart'><img src={carIcon} className='header-icons__item' alt='' /></Link>
-            {this.props.cart.length > 0 &&
-              <div className='header-alert'>{this.props.cart.length}</div>}
+                {' '}
+                {this.readCookie('name')}
+              </p>
+              <button type='button' onClick={this.handleLogout} className='login-btn'>
+                <p>Log out</p>
+              </button>
+            </div>
+          )}
+          <Link to='/shoppingCart'><img src={carIcon} className='header-icons__item' alt='' /></Link>
+          {this.props.cart.length > 0 &&
+          <div className='header-alert'>{this.props.cart.length}</div>}
 
-            <Link to='/wishes'><img src={heartIcon} className='header-icons__item' alt='' /></Link>
-            {this.props.wishes.length > 0 &&
-              <div className='header-alert'>{this.props.wishes.length}</div>}
-          </div>
+          <Link to='/wishes'><img src={heartIcon} className='header-icons__item' alt='' /></Link>
+          {this.props.wishes.length > 0 &&
+          <div className='header-alert'>{this.props.wishes.length}</div>}
         </div>
+
       </header>
     );
   }
