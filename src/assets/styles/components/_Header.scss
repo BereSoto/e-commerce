@@ -10,23 +10,20 @@ $dark-color: #3C3C3B;
     display: flex;
     height: 200px;
     &__container{
-        display: flex;
-        justify-content: space-around;
-        justify-items: center;
-        background-color: aqua;
     }
     &__brand{
-        margin: 20px;
+        margin: 80px;
+        // background-color: darkgreen;
     }
    
     &__img{
        width: 200px;
     }
     &__menu{
-        display: flex;
-        text-align: center;
         font-size: 1.3rem;
-        padding-top:30px ;
+        padding-top:30px;
+        padding-left: 50px;
+        // background-color: darkorange;
          ul {
             list-style: none;
             width: 500px;
@@ -48,7 +45,8 @@ $dark-color: #3C3C3B;
     
 .header-icons__menu{
     padding-top: 20px;
-    height: 100px;
+    height: 50px;
+    // background-color: cyan;
 }
 
 .img-user{
@@ -57,5 +55,11 @@ $dark-color: #3C3C3B;
     border-radius: 100%;
 }
 .header-icons__item{
-    margin: 2rem;
+    
+}
+
+.header-alert{
+    display: flex;
+    flex-direction: column;
+   color: #F2F0EB;
 }

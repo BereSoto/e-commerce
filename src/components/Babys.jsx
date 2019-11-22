@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts, addToCart } from '../actions';
-import carIcon from '../assets/static/car-icon-card.svg';
+import carIcon from '../assets/static/car-icon-b.svg';
 import heartIcon from '../assets/static/heart-icon-card.svg';
 
 class Babys extends React.Component {
@@ -55,6 +55,7 @@ class Babys extends React.Component {
   render() {
     return (
       <div className='card-products'>
+        <h2>Conoce los productos que tenemos para tu bebé</h2>
         <div className='card-products__items'>{this.renderProductsList()}</div>
       </div>
     );

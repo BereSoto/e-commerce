@@ -3,6 +3,8 @@
 .card-products{
   height: auto;
   color: #BD2DE5;
+  text-align: center;
+  margin:3rem 0;
  
   
   &__title{
@@ -17,6 +19,7 @@
     margin-left: auto;
     margin-right:auto ;
     margin-bottom: 2rem;
+    margin-top: 2rem;
   }
 }
 
