@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { injectStripe, CardElement } from 'react-stripe-elements';
 import { connect } from 'react-redux';
 import Axios from 'axios';
@@ -35,7 +36,7 @@ class _CardForm extends React.Component {
     stripe
       .createToken()
       .then(({ token }) => {
-        return Axios.post('http://e-moms-api.now.sh/api/payments/charge', {
+        return Axios.post('http://localhost:3001/api/payments/charge', {
           token_id: token.id,
           amount: totalCart,
           description: `Compra en e-moms por ${cart.length} items`,
@@ -63,7 +64,7 @@ class _CardForm extends React.Component {
       return <h1>No hay elementos para pagar</h1>;
     }
     if (paymentSuccesfull) {
-      return <div className='alert success'>Pago realizado exitosamente</div>;
+      return <Redirect to='/purchasemade'><div className='alert success'>Pago realizado exitosamente</div></Redirect>;
     }
     const feedback = errorMessage ? (
       <div className='alert danger'>{errorMessage}</div>
