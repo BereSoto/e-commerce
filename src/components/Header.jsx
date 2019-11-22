@@ -72,13 +72,13 @@ class Header extends Component {
           {this.isLoggedIn() && (
             <div className='hola'>
               <img src={this.readCookie('image')} className='img-user' alt='User Icon' />
-              <p>
+              <span className='hola-name'>
                       Hola
                 {' '}
                 {this.readCookie('name')}
-              </p>
+              </span>
               <button type='button' onClick={this.handleLogout} className='login-btn'>
-                <p>Log out</p>
+                <p className='logout-text'>Log out</p>
               </button>
             </div>
           )}
