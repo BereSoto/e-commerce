@@ -22,10 +22,10 @@ const Wishes = (props) => {
   };
 
   return (
-    <>
+    
       <div className='cart'>
         <div className='cart_container'>
-          {wishes.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
+          {wishes.length > 0 ? <h3>Lista de Deseos:</h3> : <h2>Aun no tienes deseos agregados</h2>}
           {wishes.map((item) => (
             <div className='cart-item' key={item._id}>
               <div className='cart-element'>
@@ -80,7 +80,7 @@ const Wishes = (props) => {
           </button>
         </Link>
       </div>
-    </>
+    
   );
 };
 

@@ -5,7 +5,6 @@ import { deleteProduct, plusQuantity, minusQuantity } from '../actions';
 
 import plus from '../assets/static/icon-plus.svg';
 import minus from '../assets/static/icon-minus.svg';
-import del from '../assets/static/icon-delete.svg';
 
 const ShoppinCart = (props) => {
   const { cart, totalCart } = props;
@@ -25,20 +24,21 @@ const ShoppinCart = (props) => {
   return (
     <div className='container'>
       {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
+
       <div className='columns'>
         <div className='cart'>
           <div className='cart_container'>
             {cart.map((item) => (
               <div className='cart-item' key={item._id}>
                 <div className='cart-element'>
-                  <span>
-                    <h4>{item.title}</h4>
-                  </span>
                   <span className='cart-element__image'>
                     <img alt='Producto' src={item.image} />
                   </span>
+                  <span className='cart-element__title'>
+                    <h5>{item.title}</h5>
+                  </span>
                   <span className='element-quantity'>
-                    
+
                     <span className='element-quantity__icons'>
                       <button
                         className='element-button'
@@ -57,10 +57,10 @@ const ShoppinCart = (props) => {
                       </button>
                     </span>
                   </span>
-                  <span>
+                  <span className='cart-element__price'>
                     {`$${item.price}`}
                   </span>
-                  <span>
+                  <span className='cart-element__new'>
                     {`$${item.newPrice}`}
                   </span>
                   <span>
@@ -87,11 +87,13 @@ const ShoppinCart = (props) => {
               <div className='cart-checkout'>
                 <Link to='/checkout'>
                   <button
-                    className='button btn cart-checkout__button'
-                    type='button'
+                    type='submit'
+                    className='form__btn'
+                    id='/'
                   >
                     Proceder con el pago
                   </button>
+
                 </Link>
               </div>
             </div>
