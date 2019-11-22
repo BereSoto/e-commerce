@@ -82,11 +82,11 @@ export const loginUser = ({ email, password }, redirecUrl) => {
       },
     })
       .then(({ data }) => {
-        document.cookie = `email=${data.email}`;
-        document.cookie = `name=${data.name}`;
-        document.cookie = `id=${data.id}`;
+        document.cookie = `email=${data.user.email}`;
+        document.cookie = `name=${data.user.name}`;
+        document.cookie = `id=${data.user.id}`;
+        document.cookie = `image=${data.user.imageProfile}`;
         dispatch(loginRequest(data));
-        alert("Bienvenida!!")
       })
       .then(() => {
         window.location.href = redirecUrl;
