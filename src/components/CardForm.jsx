@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { injectStripe, CardElement } from 'react-stripe-elements';
 import { connect } from 'react-redux';
 import Axios from 'axios';
@@ -63,7 +64,7 @@ class _CardForm extends React.Component {
       return <h1>No hay elementos para pagar</h1>;
     }
     if (paymentSuccesfull) {
-      return <div className='alert success'>Pago realizado exitosamente</div>;
+      return <Redirect to='/purchasemade'><div className='alert success'>Pago realizado exitosamente</div></Redirect>;
     }
     const feedback = errorMessage ? (
       <div className='alert danger'>{errorMessage}</div>

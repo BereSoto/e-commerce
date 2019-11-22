@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart, removeToWishes } from '../actions';
 import carIcon from '../assets/static/car-icon-b.svg';
