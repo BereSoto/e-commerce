@@ -55,7 +55,7 @@ class Babys extends React.Component {
   render() {
     return (
       <div className='card-products'>
-        <h2>Conoce los productos que tenemos para tu bebé</h2>
+        <h2 className='card-products__title'>Conoce todos los productos que tenemos para tu bebé</h2>
         <div className='card-products__items'>{this.renderProductsList()}</div>
       </div>
     );

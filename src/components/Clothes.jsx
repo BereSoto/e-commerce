@@ -57,6 +57,7 @@ class Clothes extends React.Component {
   render() {
     return (
       <div className='card-products'>
+        <h2 className='card-products__title'>pensando</h2>
         <div className='card-products__items'>{this.renderProductsList()}</div>
       </div>
     );
