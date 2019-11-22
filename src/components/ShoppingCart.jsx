@@ -69,7 +69,6 @@ const ShoppinCart = (props) => {
                       type='button'
                       onClick={() => handleDeleteProduct(item)}
                     >
-                      {/* <img src={del} alt='Eliminar' /> */}
                       <p className='delet'> &times;</p>
                     </button>
                   </span>
