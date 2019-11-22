@@ -51,23 +51,24 @@ const reducer = (state, action) => {
       alert('No es posible disminuir la cantidad de productos, te sugiero eliminarlo =)');
 
       //Lista de deseos
-    case 'ADD_TO_WISHES':
-      const existWishes = state.wishes.find((item) => item._id === action.payload._id);
-      if (existWishes) {
-        action.payload.quantity += 1;
-        action.payload.newPrice = action.payload.quantity * action.payload.price;
-        return {
-          ...state,
-          totalWishes: state.totalWishes + action.payload.price,
-        };
-      }
-      action.payload.quantity = 1;
-      action.payload.newPrice = action.payload.price;
-      return {
-        ...state,
-        wishes: [...state.wishes, action.payload],
-        totalWishes: state.totalWishes + Number(action.payload.price),
-      };
+    // case 'ADD_TO_WISHES':
+    //   const existWishes = state.wishes.find((item) => item._id === action.payload._id);
+    //   if (existWishes) {
+    //     action.payload.quantity += 1;
+    //     action.payload.newPrice = action.payload.quantity * action.payload.price;
+    //     return {
+    //       ...state,
+    //       totalWishes: state.totalWishes + action.payload.price,
+    //     };
+    //   }
+    //   action.payload.quantity = 1;
+    //   action.payload.newPrice = action.payload.price;
+    //   return {
+    //     ...state,
+    //     wishes: [...state.wishes, action.payload],
+    //     totalWishes: state.totalWishes + Number(action.payload.price),
+    //   };
+
 
     case 'DELETE_PRODUCT_WISHES':
       return {
@@ -101,6 +102,29 @@ const reducer = (state, action) => {
         user: action.payload,
       };
 
+
+      // funcionalidad agregada para wishes
+      // agrega a la lista wishes verificando que el elemento no exista
+      case 'ADD_TO_WISHES':
+        const inList = state.wishes.find(item => item._id === action.payload._id);
+        if (inList) {
+          alert('Este producto ya existe en tu lista de deseos');
+          return {
+            ...state,
+          };
+        }
+        else {
+          return {
+            ...state,
+            wishes: [...state.wishes, action.payload ],
+          };
+        }
+      // elimina de wishes
+      case 'REMOVE_TO_WISHES':
+        return {
+          ...state,
+          wishes: state.wishes.filter(items => items._id !== action.payload._id),
+        };  
     default:
       return state;
   }
