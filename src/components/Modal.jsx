@@ -38,9 +38,10 @@ const Modal = (props) => {
           <label htmlFor='password' className='modal__label'>Contraseña</label>
           <input type='text' name='password' id='password' placeholder='contraseña' onChange={handleInput}/>
           <p><button className='modal__btn' type='submit' onClick={handleSubmit}>Enviar</button></p>
+          {/*
           <p>O inicia con</p>
           <p><button type='button' className='modal__btn modal__btn--social'>Facebook</button></p>
-
+          */}
           <a href='/register'>Crea una cuenta</a>
         </form>
       </div>
