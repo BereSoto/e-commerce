@@ -23,69 +23,82 @@ const ShoppinCart = (props) => {
   };
 
   return (
-    <>
-      <div className='cart-container'>
-        <div className='cart-container__columns'>
-          {cart.length > 0 ? <h3>Carrito de compras:</h3> : <h2>Sin Pedidos</h2>}
-          {cart.map((item) => (
-            <div className='cart-container__shoop' key={item._id}>
-              <div className='cart-container__close'>
-                <button className='element-button' type='button' onClick={() => handleDeleteProduct(item)}>
-                &times;
-                  {/* <img src={del} alt='Eliminar' /> */}
-                </button>
-                <div className='cart-container__image'>
-                  <img alt='Producto' src={item.image} />
-                </div>
-                <div className='cart-container__title'>
-                  <h4>{item.title}</h4>
-                </div>
-                <div className='cart-container__quantity'>
-                  <h4>
-                    {item.quantity}
-                  </h4>
-                  <div className='cart-container__icons'>
-                    <button className='element-button' type='button' onClick={() => handlePlusQuantity(item)}>
-                      <img src={plus} alt='Agregar' />
+    <div className='container'>
+      {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h2>Sin Pedidos</h2>}
+      <div className='columns'>
+        <div className='cart'>
+          <div className='cart_container'>
+            {cart.map((item) => (
+              <div className='cart-item' key={item._id}>
+                <div className='cart-element'>
+                  <span>
+                    <h4>{item.title}</h4>
+                  </span>
+                  <span className='cart-element__image'>
+                    <img alt='Producto' src={item.image} />
+                  </span>
+                  <span className='element-quantity'>
+                    
+                    <span className='element-quantity__icons'>
+                      <button
+                        className='element-button'
+                        type='button'
+                        onClick={() => handlePlusQuantity(item)}
+                      >
+                        <img src={plus} alt='Agregar' />
+                      </button>
+                      <h4>{item.quantity}</h4>
+                      <button
+                        className='element-button'
+                        type='button'
+                        onClick={() => handleMinusQuantity(item)}
+                      >
+                        <img src={minus} alt='Eliminar' />
+                      </button>
+                    </span>
+                  </span>
+                  <span>
+                    {`$${item.price}`}
+                  </span>
+                  <span>
+                    {`$${item.newPrice}`}
+                  </span>
+                  <span>
+                    <button
+                      className='element-button'
+                      type='button'
+                      onClick={() => handleDeleteProduct(item)}
+                    >
+                      {/* <img src={del} alt='Eliminar' /> */}
+                      <p className='delet'> &times;</p>
                     </button>
-                    <button className='element-button' type='button' onClick={() => handleMinusQuantity(item)}>
-                      <img src={minus} alt='Eliminar' />
-                    </button>
-                  </div>
+                  </span>
                 </div>
-                <span>
-                  $
-                  {item.price}
-                </span>
-                <span className='cart-container__newprice'>
-                  $
-                  {item.newPrice}
-                </span>
-                <span />
               </div>
-            </div> //columna izquierda
-          ))}
-        </div>
-        {cart.length > 0 && (
-          <div className='cart-container__total'>
-            <p>Precio Total:</p>
-            <p>
-              $
-              {totalCart}
-            </p>
-            <div className='cart-checkout'>
-              <Link to='/checkout'>
-                <button className='form__btn' type='button'>
-              Proceder con el pago
-                </button>
-              </Link>
-            </div>
+            ))}
           </div>
+          {cart.length > 0 && (
+            <div className='total_container'>
+              <h3>Precio Total:</h3>
+              <h4>
+                {`$${totalCart}`}
+              </h4>
 
-        )}
+              <div className='cart-checkout'>
+                <Link to='/checkout'>
+                  <button
+                    className='button btn cart-checkout__button'
+                    type='button'
+                  >
+                    Proceder con el pago
+                  </button>
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-
-    </>
+    </div>
   );
 };
 
